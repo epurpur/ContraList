@@ -10,7 +10,7 @@ const contractorSchema = new Schema (
             type: String,
             required: true
         },
-        phoneNumber: {
+        phoneNumber: {  // To Do: Should this be a string?  Or a number?
             type: String,
             required: true
         },
