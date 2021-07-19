@@ -18,7 +18,7 @@ const contractorSchema = new Schema (
             type: Number,
             required: true
         }
-        //To Do: Add relationship to 'Job' modal
+        //To Do: Add relationship to 'Job' model
     }
 )
 

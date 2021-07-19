@@ -7,13 +7,12 @@ const typeDefs = gql`
         name: String!
         email: String!
         phoneNumber: String!
-        licenseNumber: Number!
     }
 
     type Query {
-        contractors: [Contractors]
+        contractors: [Contractor]
     }
-    
+
 `;
 
 module.exports = typeDefs;
