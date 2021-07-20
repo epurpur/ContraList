@@ -13,13 +13,13 @@ const Header = () => {
     }
 
     return (
-        <div id='header'> 
+        <header id='header'> 
             <h1 id="logo">ContraList</h1>
             <section id="navButtons">
                 <button className="navButton" onClick={contractorLogin}> Contractor Login </button>
                 <button className="navButton" onClick={employeeLogin}> Employee Login </button>
             </section>
-        </div>
+        </header>
     )
 }
 
