@@ -1,8 +1,8 @@
 
 :root {
   /* Colors */
-  --background-main: rgb(12, 12, 97);
-  --background-button: rgb(189, 189, 189);
+  --background-main: rgb(237, 237, 237);
+  --background-header: rgb(12, 12, 97);
   
   --text-logo: 'Rowdies', cursive;;
   --text-main: rgb(232, 82, 23);
@@ -11,10 +11,9 @@
 /*****************/
 /* Global Styles */
 /*****************/
-* {border: 1px solid white;}
 
 .App {
-  background-color: var(--background-main);
+  background-color: var(--background-button);
   color: var(--text-main);
 }
 
@@ -25,6 +24,7 @@
 nav {
   display: flex;
   flex-direction: row;
+  background-color: var(--background-header);
 }
 
 #logo {
@@ -32,6 +32,7 @@ nav {
   padding: 0 0 0 20px;
   font-size: 60px;
   font-family: var(--text-logo);
+  text-align: center;
 }
 
 #navButtons {
@@ -45,9 +46,9 @@ nav {
 .navButton {
   font-size: 25px;
   margin: 20px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: var(--background-button);
-  color: var(--text-main);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--background-main);
+  color: var(--background-header);
 }
 
