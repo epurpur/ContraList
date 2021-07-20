@@ -5,7 +5,8 @@
   --background-header: rgb(12, 12, 97);
   
   --text-logo: 'Rowdies', cursive;;
-  --text-main: rgb(232, 82, 23);
+  --text-logo-orange: rgb(232, 82, 23);
+  --text-main: var(--background-header);
 }
 
 /*****************/
@@ -32,6 +33,7 @@ nav {
   padding: 0 0 0 20px;
   font-size: 60px;
   font-family: var(--text-logo);
+  color: var(--text-logo-orange);
   text-align: center;
 }
 
@@ -50,5 +52,6 @@ nav {
   border-radius: 10px;
   background-color: var(--background-main);
   color: var(--background-header);
+  cursor: pointer;
 }
 
