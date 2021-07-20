@@ -4,7 +4,7 @@
   --background-main: rgb(237, 237, 237);
   --background-header: rgb(12, 12, 97);
   
-  --text-logo: 'Rowdies', cursive;;
+  --text-logo: 'Righteous', cursive;
   --text-logo-orange: rgb(232, 82, 23);
   --text-main: var(--background-header);
 }
@@ -32,10 +32,14 @@ header {
 #logo {
   width: 50%;
   padding: 0 0 0 20px;
-  font-size: 50px;
+  font-size: 60px;
   font-family: var(--text-logo);
   color: var(--text-logo-orange);
   text-align: center;
+}
+
+#logo2 {
+  color: var(--background-main);
 }
 
 #navButtons {
@@ -47,12 +51,14 @@ header {
 }
 
 .navButton {
-  font-size: 25px;
-  margin: 20px;
+  font-size: 30px;
   padding: 10px;
-  border-radius: 10px;
-  background-color: var(--background-main);
-  color: var(--background-header);
+  margin: 0 20px 0 10px;
+  color: var(--background-main);
+  font-family: var(--text-logo);
   cursor: pointer;
 }
+
+.navButton:hover {color: var(--text-logo-orange)};
+
 

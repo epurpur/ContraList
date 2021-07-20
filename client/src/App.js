@@ -19,7 +19,7 @@ function App() {
         
         {/* Establishing routes to all endpoints */}
         <Switch>
-        <Route exact path="/">
+          <Route exact path="/">
             <Homepage />
           </Route>
           <Route exact path="/ContractorLogin">
