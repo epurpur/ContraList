@@ -3,6 +3,8 @@
   /* Colors */
   --background-main: rgb(12, 12, 97);
   --background-button: rgb(189, 189, 189);
+  
+  --text-logo: 'Rowdies', cursive;;
   --text-main: rgb(232, 82, 23);
 }
 
@@ -25,10 +27,11 @@ nav {
   flex-direction: row;
 }
 
-nav h1 {
+#logo {
   width: 50%;
   padding: 0 0 0 20px;
   font-size: 60px;
+  font-family: var(--text-logo);
 }
 
 #navButtons {
