@@ -1,38 +1,64 @@
+
+:root {
+  /* Colors */
+  --background-main: rgb(237, 237, 237);
+  --background-header: rgb(12, 12, 97);
+  
+  --text-logo: 'Righteous', cursive;
+  --text-logo-orange: rgb(232, 82, 23);
+  --text-main: var(--background-header);
+}
+
+/*****************/
+/* Global Styles */
+/*****************/
+
 .App {
+  background-color: var(--background-button);
+  color: var(--text-main);
+}
+
+/********************/
+/* Header Component */
+/********************/
+
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--background-header);
+  margin: 0;
+}
+
+#logo {
+  width: 50%;
+  padding: 0 0 0 20px;
+  font-size: 60px;
+  font-family: var(--text-logo);
+  color: var(--text-logo-orange);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logo2 {
+  color: var(--background-main);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navButtons {
+  width: 50%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navButton {
+  font-size: 30px;
+  padding: 10px;
+  margin: 0 20px 0 10px;
+  color: var(--background-main);
+  font-family: var(--text-logo);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.navButton:hover {color: var(--text-logo-orange)};
+
+
