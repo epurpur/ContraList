@@ -22,10 +22,11 @@
 /* Header Component */
 /********************/
 
-nav {
+#header {
   display: flex;
   flex-direction: row;
   background-color: var(--background-header);
+  margin: 0;
 }
 
 #logo {
