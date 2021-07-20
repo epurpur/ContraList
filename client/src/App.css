@@ -1,14 +1,50 @@
 
 :root {
   /* Colors */
-  --background-blue: rgb(12, 12, 97);
-  
+  --background-main: rgb(12, 12, 97);
+  --background-button: rgb(189, 189, 189);
   --text-main: rgb(232, 82, 23);
 }
 
-
+/*****************/
+/* Global Styles */
+/*****************/
+* {border: 1px solid white;}
 
 .App {
-  background-color: var(--background-blue);
+  background-color: var(--background-main);
   color: var(--text-main);
 }
+
+/********************/
+/* Header Component */
+/********************/
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+nav h1 {
+  width: 50%;
+  padding: 0 0 0 20px;
+  font-size: 60px;
+}
+
+#navButtons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navButton {
+  font-size: 25px;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--background-button);
+  color: var(--text-main);
+}
+
