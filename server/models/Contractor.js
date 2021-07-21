@@ -11,7 +11,7 @@ const contractorSchema = new Schema (
             required: true
         },
         phoneNumber: {  // To Do: Should this be a string?  Or a number?
-            type: String,
+            type: Number,
             required: true
         },
         licenseNumber: {   // To Do: Add authentication for contractor license number?
