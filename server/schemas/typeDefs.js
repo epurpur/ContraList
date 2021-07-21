@@ -6,13 +6,24 @@ const typeDefs = gql`
         _id: ID
         name: String!
         email: String!
+        password:String!
         phoneNumber: String!
     }
 
     type Query {
         contractors: [Contractor]
     }
+   type Worker{
+    _id:ID
+    name:String!
+    email:String!
+    password:String!
 
+   }
+
+   trype Query{
+       workers:[Worker]
+   }
 `;
 
 module.exports = typeDefs;
