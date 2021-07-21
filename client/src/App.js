@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 /* CSS styles */
@@ -6,37 +6,33 @@ import './App.css';
 
 /* Pages */
 import Homepage from './pages/Homepage';
-import ContractorLogin from './pages/ContractorLogin';
-import EmployeeLogin from './pages/EmployeeLogin';
-import ContractorRegistration from './pages/ContractorRegistration';
-import EmployeeRegistration from './pages/EmployeeRegistration';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 /* Components */
 import Header from './components/Header';
 
 function App() {
+
+  // defining empty user type. Will be set to 'contractor' or 'worker' depending on what user chooses
+  const [userType, setUserType] = useState('');
+
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header userType={userType} setUserType={setUserType}/>
         
         {/* Establishing routes to all endpoints */}
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <Homepage userType={userType} setUserType={setUserType} />
           </Route>
-          <Route exact path="/ContractorLogin">
-            <ContractorLogin />
-          </Route>
-          <Route exact path="/EmployeeLogin">
-            <EmployeeLogin />
-          </Route>
-          <Route exact path="/ContractorRegistration">
-            <ContractorRegistration />
-          </Route>
-          <Route exact path="/EmployeeRegistration">
-            <EmployeeRegistration />
-          </Route>
+          <Route exact path="/Login" >
+            <Login userType={userType} />
+          </Route>          
+          <Route exact path="/Register" >
+            <Register userType={userType} />
+          </Route>         
         </Switch>
         
       </div>
