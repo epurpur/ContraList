@@ -11,14 +11,14 @@
 /********************************/
 /* Contractor Registration Form */
 /********************************/
-#contractorRegistrationForm {
+.registrationForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#contractorTitle {
+.formTitle {
     font-size: 40px;
 }
 
@@ -29,6 +29,7 @@ form {
     align-items: center;
     border: 10px solid var(--text-logo-orange);
     border-radius: 10px;
+    padding: 20px;
 }
 
 label {

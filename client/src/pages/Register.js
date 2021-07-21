@@ -14,8 +14,8 @@ const Register = ( {userType} ) => {
             {/* Contractor Registration form */}
             {userType === 'contractor' ? 
             
-            <section id="contractorRegistrationForm">
-                <h1 id='contractorTitle'>Register as a licensed contractor</h1>
+            <section className="registrationForm">
+                <h1 className="formTitle">Register as a licensed contractor</h1>
                 <form>
                     <label for="fname">First name:</label>
                     <input type="text" />
@@ -25,13 +25,27 @@ const Register = ( {userType} ) => {
                     <input type="email"/>
                     <label for="lname">Phone:</label>
                     <input type="phone"/>
-                    <label for="lname">Contractor License #:</label>
+                    <label for="lname">Contractor License Number:</label>
                     <input type="text"/>
                 </form>
             </section> 
             
             // Worker registration form
-            : <div>Worker Registration</div>
+            :   <div>
+                    <section className="registrationForm">
+                        <h1 className="formTitle">Register as a skilled laborer</h1>
+                        <form>
+                            <label for="fname">First name:</label>
+                            <input type="text" />
+                            <label for="lname">Last name:</label>
+                            <input type="text"/>
+                            <label for="email">Email:</label>
+                            <input type="email"/>
+                            <label for="lname">Phone:</label>
+                            <input type="phone"/>
+                        </form>
+                    </section>
+                </div>
             
             }
         </div>
