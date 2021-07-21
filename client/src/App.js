@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 /* CSS styles */
@@ -13,22 +13,26 @@ import Register from './pages/Register';
 import Header from './components/Header';
 
 function App() {
+
+  // defining empty user type. Will be set to 'contractor' or 'worker' depending on what user chooses
+  const [userType, setUserType] = useState('');
+
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header userType={userType} setUserType={setUserType}/>
         
         {/* Establishing routes to all endpoints */}
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <Homepage userType={userType} setUserType={setUserType} />
           </Route>
           <Route exact path="/Login">
             <Login />
-          </Route>
+          </Route>          
           <Route exact path="/Register">
             <Register />
-          </Route>
+          </Route>         
         </Switch>
         
       </div>
