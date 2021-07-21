@@ -1,9 +1,53 @@
+
+:root {
+  /* Colors */
+  --background-main: rgb(237, 237, 237);
+  --background-header: rgb(12, 12, 97);
+  
+  --text-logo: 'Righteous', cursive;
+  --text-logo-orange: rgb(232, 82, 23);
+  --text-main: var(--background-header);
+}
+
 /*************/
 /* Home Page */
 /*************/
 
-#homePage {
-    display: flex;
-    justify-content: center;
-    font-size: 100px;
+#homePageTop h1 {
+  text-align: center;
+  font-size: 70px;
   }
+
+#faster {
+  color: var(--text-logo-orange);
+}
+
+#returning {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+#returnContractor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+}
+
+#returnEmployee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+}
+
+/* this is for <p>Login</p> */
+#returning p:nth-child(2) {
+  background-color: var(--background-header);
+  color: var(--background-main);
+  padding: 5px;
+  border-radius: 10px;
+}
