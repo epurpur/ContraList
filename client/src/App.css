@@ -67,12 +67,3 @@ header {
   color: var(--text-logo-orange)
 };
 
-/*************/
-/* Home Page */
-/*************/
-
-#homePage {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
