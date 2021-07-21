@@ -10,26 +10,22 @@ const Homepage = () => {
         <section id="homePageTop"> 
             <h1>Connecting construction jobs and labor. <span id="faster">Faster.</span></h1>
             <section id="register">
-                <div className="returningUser">
-                    <p> Are you a contractor looking for labor? </p>
-                    <Link className="links" to="/ContractorRegistration" style={{ "text-decoration": "none" }}>Sign Up</Link>
+                <div className="homepageItem">
+                    <Link className="links" to="/ContractorRegistration" style={{ "text-decoration": "none" }}>Are you a contractor looking for labor?</Link>
+                    <Link className="links" to="/EmployeeRegistration" style={{ "text-decoration": "none" }}>Are you a skilled laborer looking for work?</Link>
+
                 </div>
-                <div className="returningUser">
-                    <p> Are you a skilled laborer looking for work? </p>
-                    <Link className="links" to="/EmployeeRegistration" style={{ "text-decoration": "none" }}>Sign Up</Link>
-                </div> 
             </section>
             <section id="returning">
-                <div className="returningUser">
+                <div className="homepageItem">
                     <p>Returning Contractor?</p>
                     <Link className="links" to="/ContractorLogin" style={{ "text-decoration": "none" }}>Login</Link>
                 </div>
-                <div className="returningUser">
+                <div className="homepageItem">
                     <p>Returning Employee?</p>
                     <Link className="links" to="/EmployeeLogin" style={{ "text-decoration": "none" }}>Login</Link>
                 </div>
             </section>
-            
         </section>
     )
 }
