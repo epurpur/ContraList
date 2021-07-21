@@ -8,10 +8,40 @@
     --text-main: var(--background-header);
   }
 
-  /********************************/
-  /* Contractor Registration Form */
-  /********************************/
+/********************************/
+/* Contractor Registration Form */
+/********************************/
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.formTitle {
+    font-size: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--text-logo-orange);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+label {
+    margin: 10px;
+    font-size: 30px;
+}
+
+input {
+    width: 400px;
+    margin: 10px;
+    font-size: 30px;
+}
 
 
 /****************************/
