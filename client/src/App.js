@@ -8,6 +8,8 @@ import './App.css';
 import Homepage from './pages/Homepage';
 import ContractorLogin from './pages/ContractorLogin';
 import EmployeeLogin from './pages/EmployeeLogin';
+import ContractorRegistration from './pages/ContractorRegistration';
+import EmployeeRegistration from './pages/EmployeeRegistration';
 
 /* Components */
 import Header from './components/Header';
@@ -28,6 +30,12 @@ function App() {
           </Route>
           <Route exact path="/EmployeeLogin">
             <EmployeeLogin />
+          </Route>
+          <Route exact path="/ContractorRegistration">
+            <ContractorRegistration />
+          </Route>
+          <Route exact path="/EmployeeRegistration">
+            <EmployeeRegistration />
           </Route>
         </Switch>
         
