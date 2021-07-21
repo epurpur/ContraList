@@ -10,16 +10,23 @@ const Homepage = () => {
         <section id="homePageTop"> 
             <h1>Connecting construction jobs and labor. <span id="faster">Faster.</span></h1>
             <section id="register">
-                New User?
+                <div className="returningUser">
+                    <p> Are you a contractor looking for labor? </p>
+                    <Link className="links" to="/ContractorRegistration" style={{ "text-decoration": "none" }}>Sign Up</Link>
+                </div>
+                <div className="returningUser">
+                    <p> Are you a skilled laborer looking for work? </p>
+                    <Link className="links" to="/EmployeeRegistration" style={{ "text-decoration": "none" }}>Sign Up</Link>
+                </div> 
             </section>
             <section id="returning">
-                <div id="returnContractor">
+                <div className="returningUser">
                     <p>Returning Contractor?</p>
-                    <p>Login</p>
+                    <Link className="links" to="/ContractorLogin" style={{ "text-decoration": "none" }}>Login</Link>
                 </div>
-                <div id="returnEmployee">
+                <div className="returningUser">
                     <p>Returning Employee?</p>
-                    <p>Login</p>
+                    <Link className="links" to="/EmployeeLogin" style={{ "text-decoration": "none" }}>Login</Link>
                 </div>
             </section>
             

@@ -22,13 +22,19 @@
   color: var(--text-logo-orange);
 }
 
+#register {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
 #returning {
   display: flex;
   justify-content: center;
   font-size: 30px;
 }
 
-#returnContractor {
+.returningUser {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,18 +42,13 @@
   margin: 20px;
 }
 
-#returnEmployee {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin: 20px;
-}
-
-/* this is for <p>Login</p> */
-#returning p:nth-child(2) {
+.links { 
   background-color: var(--background-header);
+  padding: 10px;
   color: var(--background-main);
-  padding: 5px;
   border-radius: 10px;
+}
+
+.links:hover {
+  color: var(--text-logo-orange);
 }
