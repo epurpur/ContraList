@@ -1,5 +1,11 @@
 import React from 'react'
 
+/* CSS styles */
+import '../App.css'
+import '../styles/HomepageStyle.css'
+
+
+
 const Homepage = () => {
     return (
         <section id="homePage"> 
