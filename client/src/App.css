@@ -16,6 +16,15 @@
 .App {
   background-color: var(--background-button);
   color: var(--text-main);
+  font-family: var(--text-logo);
+}
+
+.text-emphasis {
+  color: var(--background-main);
+}
+
+.text-emphasis-orange {
+  color: var(--text-logo-orange);
 }
 
 /********************/
@@ -33,13 +42,8 @@ header {
   width: 50%;
   padding: 0 0 0 20px;
   font-size: 60px;
-  font-family: var(--text-logo);
   color: var(--text-logo-orange);
   text-align: center;
-}
-
-#logo2 {
-  color: var(--background-main);
 }
 
 #navButtons {
@@ -59,6 +63,15 @@ header {
   cursor: pointer;
 }
 
-.navButton:hover {color: var(--text-logo-orange)};
+.navButton:hover {
+  color: var(--text-logo-orange)
+};
 
+/*************/
+/* Home Page */
+/*************/
+
+.inline-button {
+  color: green;
+}
 
