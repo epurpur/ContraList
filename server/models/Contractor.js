@@ -10,6 +10,11 @@ const contractorSchema = new Schema (
             type: String,
             required: true
         },
+        password: {
+            type: String,
+            required: true,
+            minlength: 5,
+          },
         phoneNumber: {  // To Do: Should this be a string?  Or a number?
             type: Number,
             required: true
