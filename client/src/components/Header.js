@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 /* CSS styles */
-import '../styles/HomepageStyle.css';
+import '../styles/HeaderStyle.css';
 
 const Header = ({userType, setUserType}) => {
 
