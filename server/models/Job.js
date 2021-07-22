@@ -36,18 +36,18 @@ const jobSchema = new Schema({
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
       },
-      Contractors:[
+      contractors: [
         {
-            type:Schema.Types.ObjectId,
-            ref:'Contractor'
+          type: Schema.Types.ObjectId,
+          ref: 'Contractor'
         },
-   ],
-   workers:[
-      {
-        type:Schema.Types.ObjectId,
-        ref:'Worker'
-      }
-   ]
+      ],
+      workers: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Worker'
+        }
+      ]
     },
   ],
 });
