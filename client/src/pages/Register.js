@@ -27,6 +27,7 @@ const Register = ( {userType} ) => {
                     <input type="phone"/>
                     <label for="lname">Contractor License Number:</label>
                     <input type="text"/>
+                    <button type="submit" form="nameform" value="Submit">Submit</button>
                 </form>
             </section> 
             
@@ -43,6 +44,7 @@ const Register = ( {userType} ) => {
                             <input type="email"/>
                             <label for="lname">Phone:</label>
                             <input type="phone"/>
+                            <button type="submit" form="nameform" value="Submit">Submit</button>
                         </form>
                     </section>
                 </div>

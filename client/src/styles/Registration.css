@@ -8,9 +8,9 @@
     --text-main: var(--background-header);
   }
 
-/********************************/
-/* Contractor Registration Form */
-/********************************/
+/***************************************/
+/* Contractor/Worker Registration Form */
+/***************************************/
 .registrationForm {
     display: flex;
     flex-direction: column;
@@ -30,6 +30,7 @@ form {
     border: 10px solid var(--text-logo-orange);
     border-radius: 10px;
     padding: 20px;
+    margin: 0 0 30px 0;
 }
 
 label {
@@ -43,7 +44,17 @@ input {
     font-size: 30px;
 }
 
+button {
+    height: 50px;
+    width: 408px;
+    font-size: 30px;
+    font-family: var(--text-logo);
+    color: var(--background-main);
+    background-color: var(--background-header);
+    border-radius: 10px;
+}
 
-/****************************/
-/* Worker Registration Form */
-/****************************/
+button:hover {
+    color: var(--text-logo-orange);
+    cursor: pointer;
+}
