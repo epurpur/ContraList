@@ -1,17 +1,24 @@
-const { Contractor,Worker } = require('../models');
+const { Contractor,Worker,Job } = require('../models');
 
 const resolvers = {
     Query: {
         contractors: async () => {
             return await Contractor.find({})
         },
-        worker:async (parent,{_id})=>{
+        jobs:async (parent,{_id})=>{
             const params =_id ? {_id} : {};
-            return Worker.find(params);
+            return job.find(params);
         },
+        workers: async () =>{
+            return await Worker.find({})
+        },
+        job :async (parent,{_id})=>{
+            const params = _id ? {_id} : {};
+            return job.find (params);
+        }
     },
     Mutation:{
-        
+        createJob: async (parent,args)
     }
 };
 
