@@ -8,6 +8,7 @@ import './App.css';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import LandingPage from './pages/LandingPage';
 
 /* Components */
 import Header from './components/Header';
@@ -32,7 +33,10 @@ function App() {
           </Route>          
           <Route exact path="/Register" >
             <Register userType={userType} />
-          </Route>         
+          </Route>
+          <Route exact path="/LandingPage" >
+            <LandingPage userType={userType} setUserType={setUserType} />
+          </Route>          
         </Switch>
         
       </div>
