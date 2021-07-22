@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import '../styles/Login.css';
 
 import ContractorLoginForm from '../components/ContractorLoginForm';
 import WorkerLoginForm from '../components/WorkerLoginForm';

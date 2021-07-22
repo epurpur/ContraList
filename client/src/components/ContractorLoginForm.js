@@ -2,9 +2,16 @@ import React from 'react'
 
 const ContractorLoginForm = () => {
     return (
-        <div>
-            Contractor Login Form
-        </div>
+        <section className="loginForm">
+            <h1 className="formTitle">Register as a licensed contractor</h1>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email"/>
+                <label for="lname">Password:</label>
+                <input type="phone"/>
+                <button type="submit" form="nameform" value="Submit">Submit</button>
+            </form>
+        </section> 
     )
 }
 
