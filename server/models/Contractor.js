@@ -6,10 +6,12 @@ const contractorSchema = new Schema (
             type: String,
             required: true,
         },
-        email: {    // To Do: Add authentication for email with regular expressions?
+        email: {
             type: String,
-            required: true
-        },
+            required: true,
+            unique: true,
+            match: [/.+@.+\..+/, 'Must match an email address!'],
+          },
         password: {
             type: String,
             required: true,
@@ -22,10 +24,30 @@ const contractorSchema = new Schema (
         licenseNumber: {   // To Do: Add authentication for contractor license number?
             type: Number,
             required: true
-        }
+        },
         //To Do: Add relationship to 'Job' model
+        Jobs:[
+             {
+                 type:Schema.Types.ObjectId,
+                 ref:'Job'
+             }
+        ]
     }
 )
+
+contractorSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  
+    next();
+  });
+  
+  contractorSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+  };
+  
 
 const Contractor = model('Contractor', contractorSchema);
 
