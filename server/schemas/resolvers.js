@@ -18,8 +18,18 @@ const resolvers = {
         }
     },
     Mutation:{
-        createJob: async (parent,args)
-    }
+        createJob: async (parent,args)=>{
+            const job = await Job.creat(args);
+            return job;
+        },
+        createComment: async (parent,{ _id,jobNum })=>{
+            const comment =await Job.findOneAndUpdate(
+                {_id},
+                {new:true}
+            );
+            return comment;
+        },
+    },
 };
 
 module.exports = resolvers;
