@@ -1,9 +1,9 @@
 import React from 'react';
 
-import '../styles/Login.css';
+import './styles.css';
 
-import ContractorLoginForm from '../components/ContractorLoginForm';
-import WorkerLoginForm from '../components/WorkerLoginForm';
+import ContractorLoginForm from '../../components/ContractorLoginForm';
+import WorkerLoginForm from '../../components/WorkerLoginForm';
 
 const Login = ( {userType} ) => {
     

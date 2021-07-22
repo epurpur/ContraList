@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ContractorLoginForm = () => {
+const WorkerLoginForm = () => {
     return (
         <section className="loginForm">
-            <h1 className="formTitle">Register as a licensed contractor</h1>
+            <h1 className="formTitle">Login as skilled laborer</h1>
             <form>
                 <label for="email">Email:</label>
                 <input type="email"/>
@@ -15,4 +15,4 @@ const ContractorLoginForm = () => {
     )
 }
 
-export default ContractorLoginForm
+export default WorkerLoginForm

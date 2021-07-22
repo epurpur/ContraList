@@ -1,8 +1,5 @@
 import React from 'react'
 
-/* CSS styles */
-import '../styles/Registration.css';
-
 const ContractorRegistrationForm = () => {
     return (
         <section className="registrationForm">

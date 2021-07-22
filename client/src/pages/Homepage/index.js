@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 /* CSS styles */
-import '../styles/HomepageStyle.css'
+import './styles.css'
 
 const Homepage = ({userType, setUserType}) => {
 
@@ -19,11 +19,11 @@ const Homepage = ({userType, setUserType}) => {
             <section id="returning">
                 <div className="homepageItem">
                     <p>Returning Contractor?</p>
-                    <Link className="links" to="/Login" style={{ textDecoration: 'none' }}>Login</Link>
+                    <Link className="links" to="/Login" style={{ textDecoration: 'none' }} onClick={() => setUserType('contractor')}>Login</Link>
                 </div>
                 <div className="homepageItem">
                     <p>Returning Employee?</p>
-                    <Link className="links" to="/Login" style={{ textDecoration: 'none' }}>Login</Link>
+                    <Link className="links" to="/Login" style={{ textDecoration: 'none' }} onClick={() => setUserType('worker')}>Login</Link>
                 </div>
             </section>
         </section>

@@ -1,7 +1,9 @@
 import React from 'react';
 
-import ContractorRegistrationForm from '../components/ContractorRegistrationForm';
-import WorkerRegistrationForm from '../components/WorkerRegistrationForm';
+import './styles.css';
+
+import ContractorRegistrationForm from '../../components/ContractorRegistrationForm';
+import WorkerRegistrationForm from '../../components/WorkerRegistrationForm';
 
 const Register = ( {userType} ) => {
 
