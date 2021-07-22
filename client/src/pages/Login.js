@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Login = () => {
+import ContractorLoginForm from '../components/ContractorLoginForm';
+import WorkerLoginForm from '../components/WorkerLoginForm';
+
+const Login = ( {userType} ) => {
+    
     return (
         <div>
-            Login
+            {/* Either show contractor or worker login form depending on value of userType */}
+            {userType=== 'contractor' ? <ContractorLoginForm /> : <WorkerLoginForm />}
         </div>
     )
 }
