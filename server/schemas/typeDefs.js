@@ -13,16 +13,6 @@ const typeDefs = gql`
     type Query {
         contractors: [Contractor]
     }
-   type Worker{
-    _id:ID
-    name:String!
-    email:String!
-    password:String!
-
-   }
-   type Query {
-   workers: [Worker]
-
   
 
 `;
