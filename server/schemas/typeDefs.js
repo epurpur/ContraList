@@ -20,11 +20,10 @@ const typeDefs = gql`
     password:String!
 
    }
+   type Query {
+   workers: [Worker]
 
-   type Query{
-       workers:[Worker]
-       jobs(_id:String): [Job]
-   }
+  
 
 `;
 
