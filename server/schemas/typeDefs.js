@@ -21,7 +21,7 @@ const typeDefs = gql`
 
    }
 
-   trype Query{
+   type Query{
        workers:[Worker]
    }
 `;
