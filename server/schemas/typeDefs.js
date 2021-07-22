@@ -23,7 +23,9 @@ const typeDefs = gql`
 
    type Query{
        workers:[Worker]
+       jobs(_id:String): [Job]
    }
+
 `;
 
 module.exports = typeDefs;

@@ -22,8 +22,14 @@ const contractorSchema = new Schema (
         licenseNumber: {   // To Do: Add authentication for contractor license number?
             type: Number,
             required: true
-        }
+        },
         //To Do: Add relationship to 'Job' model
+        Jobs:[
+             {
+                 type:Schema.Types.ObjectId,
+                 ref:'Job'
+             }
+        ]
     }
 )
 

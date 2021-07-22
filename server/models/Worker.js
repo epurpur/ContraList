@@ -18,6 +18,12 @@ const workerSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  Jobs:[
+    {
+        type:Schema.Types.ObjectId,
+        ref:'Job'
+    }
+]
 }
 )
 
