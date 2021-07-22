@@ -1,8 +1,5 @@
 import React from 'react';
 
-/* CSS styles */
-import '../styles/Registration.css';
-
 import ContractorRegistrationForm from '../components/ContractorRegistrationForm';
 import WorkerRegistrationForm from '../components/WorkerRegistrationForm';
 
