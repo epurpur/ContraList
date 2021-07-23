@@ -12,8 +12,8 @@ const NewJob = () => {
             <form id="newJobForm">
                 <label for="title" required>Job Title:</label>
                 <input type="text" />
-                <label for="description" required>Job Description:</label>
-                <input type="text"/>
+                <label for="comments">Job Description:</label>
+                <textarea></textarea>
                 <label for="location" required>Job Location:</label>
                 <input type="text"/>
                 <label for="duration">Duration:</label>
@@ -22,7 +22,6 @@ const NewJob = () => {
                 <textarea></textarea>
                 <button type="submit" form="nameform" value="Submit">Submit</button>
             </form>
-
         </section>
     )
 }
