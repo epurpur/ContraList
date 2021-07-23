@@ -1,6 +1,6 @@
 import React from 'react'
 
-const index = () => {
+const JobCard = () => {
     return (
         <div id="jobCardsHolder">
             <div className='jobCard'>
@@ -19,4 +19,4 @@ const index = () => {
     )
 }
 
-export default index
+export default JobCard;

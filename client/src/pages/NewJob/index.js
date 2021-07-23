@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const NewJob = () => {
+
+    //NEED TO GET INFO ABOUT CONTRACTOR AND PASS INTO NEW JOB CARD
+
     return (
         <div>
-            New Job Page
+            Create new job
         </div>
     )
 }
