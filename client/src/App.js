@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import LandingPage from './pages/LandingPage';
 import NewJob from './pages/NewJob';
+import SingleJobPage from './pages/SingleJobPage';
 
 /* Components */
 import Header from './components/Header';
@@ -40,7 +41,12 @@ function App() {
           </Route> 
           <Route exact path="/NewJob" >
             <NewJob />
-          </Route>         
+          </Route>    
+
+          {/* This URL will eventually be changed to /SingleJobPage/:id */} 
+          <Route exact path="/SingleJobPage" >
+            <SingleJobPage userType={userType} />
+          </Route>    
         </Switch>
         
       </div>
