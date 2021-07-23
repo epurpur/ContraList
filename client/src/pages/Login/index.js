@@ -18,4 +18,4 @@ const Login = ( {userType} ) => {
     )
 }
 
-export default Login
+export default Login;

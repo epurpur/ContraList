@@ -27,4 +27,4 @@ const NewJob = () => {
     )
 }
 
-export default NewJob
+export default NewJob;

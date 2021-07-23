@@ -21,4 +21,4 @@ const WorkerRegistrationForm = () => {
     )
 }
 
-export default WorkerRegistrationForm
+export default WorkerRegistrationForm;

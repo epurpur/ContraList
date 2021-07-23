@@ -6,6 +6,8 @@ import './styles.css';
 
 const Header = ({userType, setUserType}) => {
 
+// TO DO: ADD SOME LOGIC TO CHECK IF USER IS LOGGED IN, RENDER DIFFERENT BUTTONS IF YES
+
     return (
         <header> 
             <h1 id="logo">Contra<span className='text-emphasis'>List</span></h1>
@@ -17,4 +19,4 @@ const Header = ({userType, setUserType}) => {
     )
 }
 
-export default Header
+export default Header;

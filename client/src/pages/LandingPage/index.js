@@ -21,6 +21,7 @@ const LandingPage = ( {userType, setUserType} ) => {
             
             <section id='contractorJobs'>
                 <h1 id='contractorTitle'>Your Active Jobs (contractor)</h1>
+                <p id='headerSubtitle'>(click job card to view more information)</p>
                     {/* Eventually this will make DB call and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
                     <JobCard userType={userType} />
@@ -31,6 +32,7 @@ const LandingPage = ( {userType, setUserType} ) => {
             : 
             <section id='contractorJobs'>
                 <h1 id='contractorTitle'>All Active Jobs (worker)</h1>
+                <p id='headerSubtitle'>(click job card to view more information)</p>
                     {/* Eventually this will make DB call and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
                     <JobCard userType={userType} />

@@ -9,21 +9,29 @@
     --text-main: var(--background-header);
   }
 
-  #contractorJobs {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
+/**************************/
+/* Landing Page Component */
+/**************************/
 
-  #contractorTitle {
-      font-size: 50px;
-  }
+#contractorJobs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-  #newJobButton {
-      margin: 0 0 20px 0;
-      font-size: 30px;
-  }
+#contractorTitle {
+    font-size: 50px;
+}
+
+#headerSubtitle {
+    font-size: 25px;
+}
+
+#newJobButton {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+}
 
 /**********************/
 /* Job Card component */

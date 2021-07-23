@@ -23,4 +23,4 @@ const ContractorRegistrationForm = () => {
     )
 }
 
-export default ContractorRegistrationForm
+export default ContractorRegistrationForm;
