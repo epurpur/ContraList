@@ -29,7 +29,11 @@ const SingleJob = ( {userType} ) => {
             : 
             // else if userType === 'worker', show worker view of single job
             <>
-            Single Job Page Worker
+                <section id="singleJob">
+                    <SingleJobCard />
+                    <button>Submit Your Application</button>
+                </section>
+                
             </>}
         </div>
     )
