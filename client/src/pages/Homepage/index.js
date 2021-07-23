@@ -18,12 +18,8 @@ const Homepage = ({userType, setUserType}) => {
             </section>
             <section id="returning">
                 <div className="homepageItem">
-                    <p>Returning Contractor?</p>
-                    <Link className="links" to="/Login" style={{ textDecoration: 'none' }} onClick={() => setUserType('contractor')}>Login</Link>
-                </div>
-                <div className="homepageItem">
-                    <p>Returning Employee?</p>
-                    <Link className="links" to="/Login" style={{ textDecoration: 'none' }} onClick={() => setUserType('worker')}>Login</Link>
+                    <p>Returning User?</p>
+                    <Link className="links" to="/Login" style={{ textDecoration: 'none' }}>Login</Link>
                 </div>
             </section>
         </section>

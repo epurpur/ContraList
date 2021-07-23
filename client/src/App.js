@@ -29,7 +29,7 @@ function App() {
             <Homepage userType={userType} setUserType={setUserType} />
           </Route>
           <Route exact path="/Login" >
-            <Login userType={userType} />
+            <Login userType={userType} setUserType={setUserType} />
           </Route>          
           <Route exact path="/Register" >
             <Register userType={userType} />
