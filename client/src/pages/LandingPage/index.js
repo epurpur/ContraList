@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
 import ContractorJobCard from '../../components/ContractorJobCard';
 
-const index = ( {userType, setUserType} ) => {
+const LandingPage = ( {userType, setUserType} ) => {
 
     // SETTING USER TYPE ARTIFICIALLY THIS WILL BE CHANGED LATER
     setUserType('contractor');
@@ -19,7 +20,7 @@ const index = ( {userType, setUserType} ) => {
                     {/* Eventually this will make DB call and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
                     <ContractorJobCard />
-                <button id='newJobButton'> Create New Job </button>
+                <Link id='newJobButton' className='links' to='/NewJob' style={{ textDecoration: 'none' }}> Create New Job </Link>
             </section>
              
             
@@ -29,4 +30,4 @@ const index = ( {userType, setUserType} ) => {
     )
 }
 
-export default index
+export default LandingPage;
