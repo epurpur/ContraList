@@ -3,12 +3,14 @@
         "name": "Erich Purpur",
         "email": "epurpur@gmail.com",
         "phoneNumber": "828-773-7140",
+        "password":"helloo",
         "licenseNumber": "1111111"
     },
     {
         "name": "Shaima Jobran",
         "email": "shaimajobran22@gmail.com",
         "phoneNumber": "410-428-4138",
+        "password":"helloo",
         "licenseNumber": "2222222"
     }
 ]
