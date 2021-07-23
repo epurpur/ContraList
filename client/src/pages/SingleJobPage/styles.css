@@ -1,0 +1,70 @@
+:root {
+    /* Colors */
+    --background-main: rgb(237, 237, 237);
+    --background-header: rgb(12, 12, 97);
+    
+    --text-logo: 'Righteous', cursive;
+    --text-logo-orange: rgb(232, 82, 23);
+    --text-main: var(--background-header);
+}
+
+/*****************************/
+/* Single Job Page Component */
+/*****************************/
+
+#singleJob {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+#linkHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+    width: 70%;
+}
+
+
+
+/*****************************/
+/* Single Job Card component */
+/*****************************/
+
+#singleJobCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    background-color: var(--background-header);
+    border-radius: 10px;
+    color: var(--background-main);
+    margin: 10px;
+    padding: 10px;
+}
+
+.singleJobInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.singleJobInfo p {
+    padding: 10px;
+}
+
+#applicants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    border: 5px solid var(--text-logo-orange);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}

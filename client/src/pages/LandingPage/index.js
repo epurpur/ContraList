@@ -8,7 +8,7 @@ import JobCard from '../../components/JobCard';
 const LandingPage = ( {userType, setUserType} ) => {
 
     // SETTING USER TYPE ARTIFICIALLY THIS WILL BE CHANGED LATER
-    setUserType('contractor');
+    setUserType('worker');
 
     //TO DO: WILL NEED DB CALL FOR ACTIVE JOBS FOR JUST ONE CONTRACTOR (BY ID) - if userType === 'contractor'
 
