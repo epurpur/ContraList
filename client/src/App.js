@@ -8,6 +8,9 @@ import './App.css';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import LandingPage from './pages/LandingPage';
+import NewJob from './pages/NewJob';
+import SingleJobPage from './pages/SingleJobPage';
 
 /* Components */
 import Header from './components/Header';
@@ -28,11 +31,22 @@ function App() {
             <Homepage userType={userType} setUserType={setUserType} />
           </Route>
           <Route exact path="/Login" >
-            <Login userType={userType} />
+            <Login userType={userType} setUserType={setUserType} />
           </Route>          
           <Route exact path="/Register" >
             <Register userType={userType} />
-          </Route>         
+          </Route>
+          <Route exact path="/LandingPage" >
+            <LandingPage userType={userType} setUserType={setUserType} />
+          </Route> 
+          <Route exact path="/NewJob" >
+            <NewJob />
+          </Route>    
+
+          {/* This URL will eventually be changed to /SingleJobPage/:id */} 
+          <Route exact path="/SingleJobPage" >
+            <SingleJobPage userType={userType} />
+          </Route>    
         </Switch>
         
       </div>

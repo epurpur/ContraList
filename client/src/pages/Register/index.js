@@ -15,4 +15,4 @@ const Register = ( {userType} ) => {
     )
 }
 
-export default Register
+export default Register;
