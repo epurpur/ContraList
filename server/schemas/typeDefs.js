@@ -7,8 +7,8 @@ const typeDefs = gql`
         name: String
         email: String
         password:String
-        phoneNumber: Int
-        licenseNumber:Int
+        phoneNumber: String 
+        licenseNumber:String
      
     }
      type Worker{
@@ -16,7 +16,7 @@ const typeDefs = gql`
          name:String
          email:String
          password:String
-         phoneNumber:Int
+         phoneNumber:String
        
      
 
@@ -36,6 +36,8 @@ const typeDefs = gql`
     }
     type Mutation{
         createJob(jobText:String!,jobAuthor:String!,createdAt:String):Job
+        
+        createContractor(name:String!,email:String!,password:String!,phoneNumber:String!,licenseNumber:String!):Contractor
     }
     
   
