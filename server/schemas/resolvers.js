@@ -15,19 +15,19 @@ const resolvers = {
         },
         
     },
-    // Mutation:{
-    //     createJob: async (parent,{jobText,jobAuthor,createdAt})=>{
-    //         const job = await Job.create({jobText,jobAuthor,createdAt});
-    //         return job;
-    //     },
-    //     submitApplictaion: async (parent,{ name,email})=>{
-    //         const apply =await Job.findOneAndUpdate(
-    //             {name},
-    //             {email}
-    //         );
-    //         return apply;
-    //     },
-    // },
+    Mutation:{
+        createJob: async (parent,{jobText,jobAuthor,createdAt})=>{
+            const job = await Job.create({jobText,jobAuthor,createdAt});
+            return job;
+        },
+        // submitApplictaion: async (parent,{ name,email})=>{
+        //     const apply =await Job.findOneAndUpdate(
+        //         {name},
+        //         {email}
+        //     );
+        //     return apply;
+        // },
+    },
 };
 
 module.exports = resolvers;

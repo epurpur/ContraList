@@ -34,6 +34,9 @@ const typeDefs = gql`
         worker:[Worker]
         job:[Job]
     }
+    type Mutation{
+        createJob(jobText:String!,jobAuthor:String!,createdAt:String):Job
+    }
     
   
 
