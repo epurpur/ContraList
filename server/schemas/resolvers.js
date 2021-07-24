@@ -10,6 +10,9 @@ const resolvers = {
         worker: async () => {
             return await Worker.find({})
         },
+        job:async ()=>{
+            return await Job.find({})
+        }
       
     },
     // Mutation:{
