@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { Contractor } = require('../models');
+const { Contractor,Worker,Job } = require('../models');
 
 // import data from .json files
 const contractorData = require('./contractorData.json')
@@ -14,3 +14,4 @@ db.once('open', async () => {
     console.log('Seed data inserted!')
     process.exit(0);
 });
+const 
