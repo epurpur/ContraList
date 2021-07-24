@@ -30,3 +30,11 @@ db.once('open', async () => {
 const jobData = require('./jobData.json')
 
 
+db.once('open', async () => {
+    await Job.deleteMany({});
+
+    const jobs = await Job.insertMany(jobData);
+
+    console.log('Seed data inserted!')
+    process.exit(0);
+});

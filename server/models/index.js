@@ -4,4 +4,4 @@ const Worker = require('./Worker');
 const Job = require('./Job');
 
 // export models to be used by schema
-module.exports = { Contractor,Worker };
+module.exports = { Contractor,Worker,Job };
