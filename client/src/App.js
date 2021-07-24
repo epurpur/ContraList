@@ -57,7 +57,7 @@ function App() {
               <SingleJobPage userType={userType} />
             </Route>    
           </Switch>
-          
+    
         </div>
       </Router>
     </ApolloProvider>
