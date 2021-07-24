@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
 
 import './styles.css';
 
 import JobCard from '../../components/JobCard';
+
+import { QUERY_ALL_WORKERS } from '../../utils/queries';
 
 const LandingPage = ( {userType, setUserType} ) => {
 
@@ -13,6 +16,15 @@ const LandingPage = ( {userType, setUserType} ) => {
     //TO DO: WILL NEED DB CALL FOR ACTIVE JOBS FOR JUST ONE CONTRACTOR (BY ID) - if userType === 'contractor'
 
     //TO DO: WILL NEED DB CALL FOR ALL ACTIVE JOBS
+
+
+
+
+    //TEST DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
+    const { loading, data } = useQuery(QUERY_ALL_WORKERS);
+    console.log(data);
+
+
 
     return (
         <div>
