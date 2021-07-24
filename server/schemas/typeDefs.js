@@ -31,6 +31,7 @@ const typeDefs = gql`
 
     type Query {
         contractor: [Contractor]
+        worker:[Worker]
     }
     
   

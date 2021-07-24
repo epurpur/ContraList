@@ -1,39 +1,28 @@
+// const { AuthenticationError } = require('apollo-server-express');
 const { Contractor,Worker,Job} = require('../models');
+// const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
         contractor: async () => {
             return await Contractor.find({})
         },
-        // jobs:async (parent,{_id})=>{
-        //     const params =_id ? {_id} : {};
-        //     return job.find(params);
-        // },
-        // worker: async () =>{
-        //     return await Worker.find({})
-        // },
-        // job :async (parent,{_id})=>{
-        //     const params = _id ? {_id} : {};
-        //     return job.find (params);
-        // }
-        worker:async()=>{
-            return Worker.find({})
+        worker: async () => {
+            return await Worker.find({})
         },
-        job:async()=>{
-            return Job.find({})
-        },
+      
     },
     // Mutation:{
-    //     createJob: async (parent,args)=>{
-    //         const job = await Job.creat(args);
+    //     createJob: async (parent,{jobText,jobAuthor,createdAt})=>{
+    //         const job = await Job.create({jobText,jobAuthor,createdAt});
     //         return job;
     //     },
-    //     createComment: async (parent,{ _id,jobNum })=>{
-    //         const comment =await Job.findOneAndUpdate(
-    //             {_id},
-    //             {new:true}
+    //     submitApplictaion: async (parent,{ name,email})=>{
+    //         const apply =await Job.findOneAndUpdate(
+    //             {name},
+    //             {email}
     //         );
-    //         return comment;
+    //         return apply;
     //     },
     // },
 };
