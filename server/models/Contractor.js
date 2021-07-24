@@ -18,11 +18,11 @@ const contractorSchema = new Schema (
             minlength: 5,
           },
         phoneNumber: {  // To Do: Should this be a string?  Or a number?
-            type: String,
+            type: String ,
             required: true
         },
         licenseNumber: {   // To Do: Add authentication for contractor license number?
-            type: Number,
+            type: String,
             required: true
         },
         //To Do: Add relationship to 'Job' model

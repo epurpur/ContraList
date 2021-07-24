@@ -20,6 +20,10 @@ const resolvers = {
             const job = await Job.create({jobText,jobAuthor,createdAt});
             return job;
         },
+        createContractor:async (parent,{name,email,password,phoneNumber,licenseNumber})=>{
+            const contractor = await Contractor.create({name,email,password,phoneNumber,licenseNumber});
+            return contractor;
+        },
         // submitApplictaion: async (parent,{ name,email})=>{
         //     const apply =await Job.findOneAndUpdate(
         //         {name},
