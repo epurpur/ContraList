@@ -36,18 +36,18 @@ const jobSchema = new Schema({
         default: new Date(),
       
       },
-      // contractors: [
-      //   {
-      //     type: Schema.Types.ObjectId,
-      //     ref: 'Contractor'
-      //   },
-      // ],
-      // workers: [
-      //   {
-      //     type: Schema.Types.ObjectId,
-      //     ref: 'Worker'
-      //   }
-      // ]
+      contractor: 
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Contractor'
+        },
+      worker:[
+        {
+        type: Schema.Types.ObjectId,
+        ref : 'Worker'
+        },
+      ],
+      
     },
   ],
 });
