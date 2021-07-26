@@ -42,12 +42,7 @@ const jobSchema = new Schema({
       //     ref: 'Contractor'
       //   },
       // ],
-      // workers: [
-      //   {
-      //     type: Schema.Types.ObjectId,
-      //     ref: 'Worker'
-      //   }
-      // ]
+      
     },
   ],
 });

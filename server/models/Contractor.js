@@ -17,15 +17,15 @@ const contractorSchema = new Schema (
             required: true,
             minlength: 5,
           },
-        phoneNumber: {  // To Do: Should this be a string?  Or a number?
+        phoneNumber: { 
             type: String ,
             required: true
         },
-        licenseNumber: {   // To Do: Add authentication for contractor license number?
+        licenseNumber: {   
             type: String,
             required: true
         },
-        //To Do: Add relationship to 'Job' model
+        //contarctor has one on one relationship one job has one contractor
         Job:[
              {
                  type:Schema.Types.ObjectId,
