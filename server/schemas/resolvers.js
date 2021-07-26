@@ -13,7 +13,9 @@ const resolvers = {
         job: async () => {
             return await Job.find({})
         },
-        
+        job: async (parent, args) => {
+            return await Class.findById(args.id);
+          },
     },
     Mutation:{
         createJob: async (parent,{jobText,jobAuthor,createdAt})=>{
