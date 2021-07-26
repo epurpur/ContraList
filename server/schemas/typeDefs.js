@@ -32,7 +32,8 @@ const typeDefs = gql`
     type Query {
         contractor: [Contractor]
         worker:[Worker]
-        job:[Job]
+        jobs:[Job]
+        job(id:ID!):Job
     }
     type Mutation{
         createJob(jobText:String!,jobAuthor:String!,createdAt:String):Job
