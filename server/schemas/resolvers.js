@@ -6,18 +6,18 @@ const resolvers = {
     Query: {
         //finding all contractors
         contractor: async () => {
-            return await Contractor.find({});
+            return await Contractor.find({}).populate('job')
         },
         //finding all workers
         worker: async () => {
-            return await Worker.find({}).populate('job').populate({
-                path:'job'
-                populate:''
-            })
+            return await Worker.find({}).populate('job')
         },
         //finding all jobs
         job: async () => {
-            return await Job.find({});
+            return await Job.find({}).populate('contarctor','worker').populate({
+                path: 'worker',
+                populate: 'contractor'
+            })
         },
         // jobs: async (parent, args) => {
         //     return await Class.findById(args.id);
