@@ -10,7 +10,10 @@ const resolvers = {
         },
         //finding all workers
         worker: async () => {
-            return await Worker.find({});
+            return await Worker.find({}).populate('job').populate({
+                path:'job'
+                populate:''
+            })
         },
         //finding all jobs
         job: async () => {
