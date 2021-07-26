@@ -18,7 +18,7 @@ const workerSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  Jobs:[
+  Job:[
     {
         type:Schema.Types.ObjectId,
         ref:'Job'

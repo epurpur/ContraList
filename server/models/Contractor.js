@@ -26,12 +26,12 @@ const contractorSchema = new Schema (
             required: true
         },
         //contarctor has one on one relationship one job has one contractor
-        Job:[
+        Job:
              {
                  type:Schema.Types.ObjectId,
                  ref:'Job'
              }
-        ]
+        
     }
 )
 

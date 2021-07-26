@@ -36,12 +36,11 @@ const jobSchema = new Schema({
         default: new Date(),
       
       },
-      contractor: [
+      contractor: 
         {
           type: Schema.Types.ObjectId,
           ref: 'Contractor'
         },
-      ],
       worker:[
         {
         type: Schema.Types.ObjectId,
