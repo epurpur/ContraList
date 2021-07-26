@@ -4,16 +4,21 @@ const { Contractor,Worker,Job} = require('../models');
 
 const resolvers = {
     Query: {
+        //finding all contractors
         contractor: async () => {
-            return await Contractor.find({})
+            return await Contractor.find({});
         },
+        //finding all workers
         worker: async () => {
-            return await Worker.find({})
+            return await Worker.find({});
         },
+        //finding all jobs
         job: async () => {
-            return await Job.find({})
+            return await Job.find({});
         },
-        
+        // jobs: async (parent, args) => {
+        //     return await Class.findById(args.id);
+        //   },
     },
     Mutation:{
         createJob: async (parent,{jobText,jobAuthor,createdAt})=>{
