@@ -19,23 +19,23 @@ const jobSchema = new Schema({
     default: new Date(),
     
   },
-  comments: [
-    {
-      commentText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 280,
-      },
-      commentAuthor: {
-        type: String,
-        required: true,
-      },
-      createdAt: {
-        type: Date,
-        default: new Date(),
+  // comments: [
+  //   {
+  //     commentText: {
+  //       type: String,
+  //       required: true,
+  //       minlength: 1,
+  //       maxlength: 280,
+  //     },
+  //     commentAuthor: {
+  //       type: String,
+  //       required: true,
+  //     },
+      // createdAt: {
+      //   type: Date,
+      //   default: new Date(),
       
-      },
+      // },
       contractor: 
         {
           type: Schema.Types.ObjectId,
@@ -48,9 +48,7 @@ const jobSchema = new Schema({
         },
       ],
       
-    },
-  ],
-});
+    });
 
 const Job = model('Job', jobSchema);
 
