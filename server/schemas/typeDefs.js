@@ -39,6 +39,7 @@ const typeDefs = gql`
         createJob(jobText:String!,jobAuthor:String!,createdAt:String):Job
         
         createContractor(name:String!,email:String!,password:String!,phoneNumber:String!,licenseNumber:String!):Contractor
+        createWorker(name:String!,email:String!,password:String!):Worker
     }
     
   

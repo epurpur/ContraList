@@ -32,6 +32,11 @@ const resolvers = {
             const contractor = await Contractor.create({name,email,password,phoneNumber,licenseNumber});
             return contractor;
         },
+
+        createWorker:async (parent,{name,email,password})=>{
+            const worker= await Worker.create({name,email,password});
+            return worker;
+        }
         // submitApplictaion: async (parent,{ name,email})=>{
         //     const apply =await Job.findOneAndUpdate(
         //         {name},
