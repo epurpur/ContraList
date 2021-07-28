@@ -1,31 +1,31 @@
 const db = require('../config/connection');
-const { Contractor, Worker, Job } = require('../models');
+const { User, Job } = require('../models');
 
 // import data from .json files
-const contractorData = require('./contractorData.json')
+const userData = require('./userData.json')
 
 db.once('open', async () => {
     // clean any existing database records
-    await Contractor.deleteMany({});
+    await User.deleteMany({});
 
     // bulk create each model
-    const contractors = await Contractor.insertMany(contractorData);
+    const users = await User.insertMany(userData);
 
-    console.log('Seed data inserted!')
+    console.log('user seed data inserted ')
     process.exit(0);
 });
 
 
-const workerData = require('./workerData.json')
+// const workerData = require('./workerData.json')
 
-db.once('open', async () => {
-    await Worker.deleteMany({});
+// db.once('open', async () => {
+//     await Worker.deleteMany({});
 
-    const workers = await Worker.insertMany(workerData);
+//     const workers = await Worker.insertMany(workerData);
 
-    console.log('Seed data inserted!')
-    process.exit(0);
-});
+//     console.log('Seed data inserted!')
+//     process.exit(0);
+// });
 
 const jobData = require('./jobData.json')
 
