@@ -1,39 +1,79 @@
-// const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { User,Job} = require('../models');
-// const { populate } = require('../models/');
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        //finding all users
-        user: async () => {
-            return await User.find({}).populate('job')
-        },
-    
-        //finding all jobs
-        job: async () => {
-            return await Job.find({}).populate('user')
-        },
-         //finding one user that applied and display the jobs that are connected to this user (contractor)
-         contractorjobs: async (parent, { user }) => {
-            // return Job.find({ user })
-            return Job.find({ _id: userId });
+        users: async () => {
+            return User.find().populate('jobs');
           },
-      
-    },
+          user: async (parent, { username }) => {
+            return User.findOne({ username }).populate('jobs');
+          },
+          jobs: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Job.find(params).sort({ createdAt: -1 });
+          },
+          job: async (parent, { jobId }) => {
+            return Job.findOne({ _id: jobId });
+          },
+        },
     Mutation:{
-        createJob: async (parent,{jobText,jobAuthor,createdAt})=>{
-            const job = await Job.create({jobText,jobAuthor,createdAt});
+        addUser: async (parent, { username, email, password,phoneNumber,licenseNumber,roleId,description }) => {
+            const user = await User.create({ username, email, password,phoneNumber,licenseNumber,roleId,description });
+            const token = signToken(user);
+            return { token, user };
+          },
+          login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
+      
+            if (!user) {
+              throw new AuthenticationError('No user found with this email address');
+            }
+      
+            const correctPw = await user.isCorrectPassword(password);
+      
+            if (!correctPw) {
+              throw new AuthenticationError('Incorrect credentials');
+            }
+      
+            const token = signToken(user);
+      
+            return { token, user };
+          },
+          addJob: async (parent, { jobText, jobAuthor }) => {
+            const job = await Job.create({ jobText, jobAuthor });
+      
+            await User.findOneAndUpdate(
+              { username: jobAuthor },
+              { $addToSet: { jobs: job._id } }
+            );
+      
             return job;
+          },
+          addComment: async (parent, { jobId, commentText, commentAuthor }) => {
+            return Job.findOneAndUpdate(
+              { _id: jobId },
+              {
+                $addToSet: { comments: { commentText, commentAuthor } },
+              },
+              {
+                new: true,
+                runValidators: true,
+              }
+            );
+          },
+          removeJob: async (parent, { jobId }) => {
+            return Job.findOneAndDelete({ _id: jobId });
+          },
+          removeComment: async (parent, { jobId, commentId }) => {
+            return Job.findOneAndUpdate(
+              { _id: jobId },
+              { $pull: { comments: { _id: commentId } } },
+              { new: true }
+            );
+          },
         },
-        createUser:async (parent,{name,email,password,phoneNumber,licenseNumber,roleId,description})=>{
-            const user = await User.create({name,email,password,phoneNumber,licenseNumber,roleId,description});
-            return user;
-        },
-        
-
-    
-    },
-};
+    }
 
 module.exports = resolvers;
