@@ -13,7 +13,7 @@ const LoginForm = () => {
     // update state based on form input changes
     const handleChange = (event) => {
       const { name, value } = event.target;
-  
+      
       setFormState({
         ...formState,
         [name]: value,
@@ -40,6 +40,10 @@ const LoginForm = () => {
         password: '',
       });
     };
+
+    const test = () => {
+        console.log('testing');
+    }
   
 
     return (
@@ -47,10 +51,26 @@ const LoginForm = () => {
             <h1 className="formTitle">Login</h1>
             <form>
                 <label>Email:</label>
-                <input type="email"/>
+                <input 
+                    type="email"
+                    name="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                />
                 <label>Password:</label>
-                <input type="phone"/>
-                <button type="submit" form="nameform" value="Submit">Submit</button>
+                <input 
+                    type="password"
+                    name="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                />
+                <button 
+                    type="submit" 
+                    form="nameform" 
+                    onClick={handleFormSubmit}
+                >
+                    Submit
+                </button>
             </form>
         </section> 
     )
