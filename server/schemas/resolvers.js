@@ -30,9 +30,9 @@ const resolvers = {
             if (!user) {
               throw new AuthenticationError('No user found with this email address');
             }
-      
+            console.log('before isCorrectPassword');
             const correctPw = await user.isCorrectPassword(password);
-      
+            console.log('after isCorrectPassword')
             if (!correctPw) {
               throw new AuthenticationError('Incorrect credentials');
             }
