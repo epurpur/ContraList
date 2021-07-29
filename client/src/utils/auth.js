@@ -1,6 +1,11 @@
 // use this to decode a token and get the user's information out of it
 import decode from 'jwt-decode';
 
+/**
+ * These class methods are used to evaluate if user is logged in and other related methods
+ */
+
+
 // create a new class to instantiate for a user
 class AuthService {
   // get user data from JSON web token by decoding it
