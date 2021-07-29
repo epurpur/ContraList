@@ -1,6 +1,11 @@
 // use this to decode a token and get the user's information out of it
 import decode from 'jwt-decode';
 
+/**
+ * These class methods are used to evaluate if user is logged in and other related methods
+ */
+
+
 // create a new class to instantiate for a user
 class AuthService {
   // get user data from JSON web token by decoding it
@@ -33,8 +38,9 @@ class AuthService {
 
   login(idToken) {
     // Saves user token to localStorage and reloads the application for logged in status to take effect
+    // Window is reassigned to the /LandingPage endpoint
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    window.location.assign('/LandingPage');
   }
 
   logout() {

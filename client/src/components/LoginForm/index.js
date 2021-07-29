@@ -24,11 +24,15 @@ const LoginForm = () => {
     const handleFormSubmit = async (event) => {
       event.preventDefault();
       console.log(formState);
+
+      //
       try {
         const { data } = await login({
           variables: { ...formState },
         });
   
+        // takes login token and stores it in local storage
+        // Also re-assigns window to URL '/LandingPage'
         Auth.login(data.login.token);
       } catch (e) {
         console.error(e);
@@ -40,11 +44,14 @@ const LoginForm = () => {
         password: '',
       });
     };
-
-    const test = () => {
-        console.log('testing');
-    }
   
+    const logoutUser = (event) => {
+    // logs user out. destroys login token in local storage
+        event.preventDefault();
+        Auth.logout();
+    }
+
+    console.log("Logged In?", Auth.loggedIn())
 
     return (
         <section className="loginForm">
@@ -72,6 +79,8 @@ const LoginForm = () => {
                     Submit
                 </button>
             </form>
+
+            <button type="submit" onClick={logoutUser}>Logout</button>
         </section> 
     )
 }
