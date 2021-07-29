@@ -38,8 +38,9 @@ class AuthService {
 
   login(idToken) {
     // Saves user token to localStorage and reloads the application for logged in status to take effect
+    // Window is reassigned to the /LandingPage endpoint
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    window.location.assign('/LandingPage');
   }
 
   logout() {

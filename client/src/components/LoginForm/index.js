@@ -40,11 +40,13 @@ const LoginForm = () => {
         password: '',
       });
     };
-
-    const test = () => {
-        console.log('testing');
-    }
   
+    const logoutUser = (event) => {
+        event.preventDefault();
+        Auth.logout();
+    }
+
+    console.log('logged in? ', Auth.loggedIn())
 
     return (
         <section className="loginForm">
@@ -72,6 +74,8 @@ const LoginForm = () => {
                     Submit
                 </button>
             </form>
+
+            <button type="submit" onClick={logoutUser}>Logout</button>
         </section> 
     )
 }
