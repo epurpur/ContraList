@@ -95,6 +95,17 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
+## **Authors**
 
+Below is contact information for the authors of this application. Please feel free to reach out directly if additional questions exist.
+
+| Name           | Email                    | Portfolio                                                                  | Github                                        |
+| -------------- | ------------------------ | -------------------------------------------------------------------------- | --------------------------------------------|
+| Shaima Jobran  | shaimajobran22@gmail.com |[Shaima](https://shaimajobran.github.io/shaima-portfolio/)                                |  [shaimaJobran](https://github.com/shaimajobran)       |
+| Erich Purpur     | epurpur@gmail.com     | [Erich Purpur](https://ep-react-portfolio.herokuapp.com/)                              | [erichpurpur](https://github.com/epurpur)   |
+
+---
+
+### Thank you for using ConraList!
 ---
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
