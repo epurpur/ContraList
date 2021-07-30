@@ -62,5 +62,10 @@ For more information about Career Services, including coding milestones, demo da
 - **R**eact.js
 - **N**ode.js
 
+
+## Additional Technologies
+- Custom error handling middleware
+- Custom auth & protected route middleware
+
 ---
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
