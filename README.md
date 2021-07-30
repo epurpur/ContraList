@@ -16,17 +16,11 @@
 
 ---
 
-## Key Topics
+## **Description**
 
-The following topics will be covered in this unit:
+Many Generla Contractors have a hard time finding workers to work for them on their projects and many workers have a hard time finding jobs that fits their skills.ContaList provides a unique apporyunity for rhem to connect.
 
-* Full-stack MERN applications
-
-* [Git branching workflow](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
-
-* [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development)
-
-* Collaborative development
+---
 
 ## Learning Objectives
 
