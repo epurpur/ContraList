@@ -39,16 +39,15 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
-    // Decode idToken and save userId to localStorage variable
+    // Decode idToken and save username to localStorage variable
     const userData = decode(idToken)
-    localStorage.setItem('userId', userData.data._id);
-    // window.location.assign('/LandingPage');
+    localStorage.setItem('username', userData.data.username);
   }
 
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
-    localStorage.removeItem('userId');
+    localStorage.removeItem('username');
     // this will send user to home page and reset the state of the application
     window.location.assign('/');
   }
