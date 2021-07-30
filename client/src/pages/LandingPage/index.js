@@ -6,22 +6,19 @@ import './styles.css';
 
 import JobCard from '../../components/JobCard';
 
-// import { QUERY_ALL_WORKERS } from '../../utils/queries';
 
 const LandingPage = ( {userType, setUserType} ) => {
 
     // SETTING USER TYPE ARTIFICIALLY THIS WILL BE CHANGED LATER
     setUserType('contractor');
 
-    //TO DO: WILL NEED DB CALL FOR ACTIVE JOBS FOR JUST ONE CONTRACTOR (BY ID) - if userType === 'contractor'
 
-    //TO DO: WILL NEED DB CALL FOR ALL ACTIVE JOBS
 
 
 
 
     //TEST DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
-    // const { loading, data } = useQuery(QUERY_ALL_WORKERS);
+    // const { loading, data } = useQuery(QUERY_JOBS);
     // console.log(data);
 
 
