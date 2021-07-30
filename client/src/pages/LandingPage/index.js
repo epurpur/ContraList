@@ -28,7 +28,7 @@ const LandingPage = ( {userType, setUserType} ) => {
     return (
         <div>
             {/* Evaluate userType if it is set to contractor or worker */}
-            {userRole === 'contractor' ? 
+            {userRole === '1' ? 
             
             <section id='contractorJobs'>
                 <h1 id='contractorTitle'>Your Active Jobs (contractor)</h1>

@@ -51,7 +51,11 @@ const LoginForm = () => {
         password: '',
       });      
 
-      setUserRole('worker');
+      //get roleId value of user from localstorage
+      const roleId = localStorage.getItem('roleId');
+
+      //setUserRole context to value of roleId
+      setUserRole(roleId);
     };
   
     const logoutUser = (event) => {
