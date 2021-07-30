@@ -21,28 +21,14 @@
 Many Generla Contractors have a hard time finding workers to work for them on their projects and many workers have a hard time finding jobs that fits their skills.ContaList provides a unique apporyunity for rhem to connect.
 
 ---
+## **User Story**
 
-## Learning Objectives
+_AS A_ General Contractor <br />
+_I WANT_ to be able to post a job that needs to find the right person to complete it <br />
+_AS A_ Worker I want to be able to find the right job for my skills and apply for it 
 
-You will be employer-ready if you are able to:
 
-* Speak technically about a feature you implemented in your project
-
-* Explain and execute git branching workflow in a collaborative project
-
-* Resolve merge conflicts
-
-* Explain agile software development
-
-* Design, build and deploy a full-stack MERN application to Heroku
-
-* Prepare a professional presentation and repository README for your project
-
-## Homework
-
-With your group, you’ll again conceive and execute a design that solves a real-world problem. In creating your first collaborative MERN stack single-page application, you’ll combine a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, implementing user authentication with JWT to build a user-focused platform. You’ll continue to build on the agile development methodologies you’ve used throughout this course. These include storing your project code in GitHub, managing your work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
-
-For this project, you should start from scratch. Doing so will allow you to revisit your front-end abilities in the context of React and solidify your understanding of working with multiple servers in a MERN application. Your skills have continued to improve since the first two projects, so naturally your approach will be different considering the experience you’ve gained with each new application you’ve built.
+---
 
 ## Career Connection
 
