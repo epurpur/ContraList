@@ -27,7 +27,8 @@ const LoginForm = () => {
     // submit form
     const handleFormSubmit = async (event) => {
 
-      console.log(formState);
+      // logs current value of formState
+      console.log('formState upon start of handleFormSubmit ::', formState);
 
       //
       try {
@@ -36,7 +37,6 @@ const LoginForm = () => {
           
         });
 
-        
         // takes login token as well as userId (which is decoded) and stores it in local storage
         Auth.login(data.login.token);
       } catch (e) {
@@ -56,6 +56,7 @@ const LoginForm = () => {
         Auth.logout();
     }
 
+    //upon page load, log if user is logged in or not
     console.log("Logged In?", Auth.loggedIn())
 
 
@@ -77,7 +78,9 @@ const LoginForm = () => {
                     value={formState.password}
                     onChange={handleChange}
                 />
-                <Link to='/LandingPage' onClick={handleFormSubmit}><button>Submit</button></Link>
+                <Link to='/LandingPage' onClick={handleFormSubmit}>
+                  <button>Submit</button>
+                </Link>
 
             </form>
 
