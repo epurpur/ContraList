@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react';
-import decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
-import { useQuery, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 
-import { QUERY_USER } from '../../utils/queries';
+// Queries and Mutations
 import { LOGIN_USER } from '../../utils/mutations';
 
 import { UserContext } from '../../utils/UserContext';
@@ -14,9 +13,8 @@ const LoginForm = () => {
 
     const { userRole, setUserRole } = useContext(UserContext);
     const [ formState, setFormState ] = useState({ email: '', password: '' });
-    const [ login, { error, data } ] = useMutation(LOGIN_USER);
-    const { loading, currentUserData } = useQuery(QUERY_USER);
-  
+    const [ login, { error, data } ] = useMutation(LOGIN_USER);  
+
     // update state based on form input changes
     const handleChange = (event) => {
       const { name, value } = event.target;
@@ -26,8 +24,6 @@ const LoginForm = () => {
         [name]: value,
       });
     };
-  
-
 
     // submit form
     const handleFormSubmit = async (event) => {
@@ -44,6 +40,7 @@ const LoginForm = () => {
 
         // takes login token as well as userId (which is decoded) and stores it in local storage
         Auth.login(data.login.token);
+
       } catch (e) {
         console.error(e);
       }
@@ -52,15 +49,13 @@ const LoginForm = () => {
       setFormState({
         email: '',
         password: '',
-      });
+      });      
 
-      //START HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      // makes query to DB for data about this specific user by the username
-      // if currentUserData exists, then give current data about user
-      // I am trying to follow class video MERN class 2 at minute 41
-      const username = localStorage.getItem('username')     // THIS GETS THE USERNAME OF THE CURRENT USER FROM LOCAL STORAGE. THIS WILL BE USED TO MAKE QUERY_USER QUERY
-      
-      //HERE WE NEED TO USE QUERY USER TO GET INFO ABOUT THIS USER AND USE ROLE_ID TO SET VALUE OF USERROLE CONTEXT TO '1' OR '2'
+      //get roleId value of user from localstorage
+      const roleId = localStorage.getItem('roleId');
+
+      //setUserRole context to value of roleId
+      setUserRole(roleId);
     };
   
     const logoutUser = (event) => {

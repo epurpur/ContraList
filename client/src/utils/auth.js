@@ -39,9 +39,9 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
-    // Decode idToken and save username to localStorage variable
+    // Decode idToken and save roleId to localStorage variable
     const userData = decode(idToken)
-    localStorage.setItem('username', userData.data.username);
+    localStorage.setItem('roleId', userData.data.roleId);
   }
 
   logout() {
