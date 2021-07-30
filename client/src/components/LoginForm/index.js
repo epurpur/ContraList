@@ -77,14 +77,8 @@ const LoginForm = () => {
                     value={formState.password}
                     onChange={handleChange}
                 />
-                <Link to='/LandingPage' onClick={handleFormSubmit}>Submit</Link>
-                {/* <button 
-                    type="submit" 
-                    form="nameform" 
-                    onClick={handleFormSubmit}
-                >
-                    Submit
-                </button> */}
+                <Link to='/LandingPage' onClick={handleFormSubmit}><button>Submit</button></Link>
+
             </form>
 
             <button type="submit" onClick={logoutUser}>Logout</button>
