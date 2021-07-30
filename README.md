@@ -34,13 +34,30 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 
 For more information about Career Services, including coding milestones, demo days, technical toolkits, workshops, and additional resources, visit the [Career Services website](https://mycareerspot.org/).
 
-## Heads-Up
+## **Feature List**
 
-In the next unit, you'll continue to work on your final projects. You'll end the week by presenting your project to your class. Once your project is complete, you'll want to update your professional materials and add your new project to your portfolio.
+- 
 
-## Resources
+---
 
-Here are some additional resources to help solidify the topics covered in this unit.
+## Packages & Libraries
+```
+1. React JS 
+2. GraphQL
+3. JavaScript
+4. Node.js
+5. Express.js
+6. HTML and CSS
+7. Semantic UI (for styling)
+8. Authentication (JWT)
+9. MongoDB and Mongoose ODM
+10. Apollo Server Express
+11. Queries and Mutations
+12. TypeDefs and Resolvers
+13. Jsonwebtoken
+14. DateFormat
+15. Bcrypt
+16 
 
 ### Full-Stack Blog Posts
 
