@@ -6,7 +6,7 @@
 
 1. [Description](#Description)
 1. [User Story](#User-Story)
-1. [Feature List](#Feature-List)
+1. [Screen Shots](#Screen-Shots)
 1. [Packages & Libraries](#Packages-&-Libraries)
 1. [Tech Stack](#Tech-Stack)
 1. [Installation](#Installation)
@@ -34,7 +34,7 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 
 For more information about Career Services, including coding milestones, demo days, technical toolkits, workshops, and additional resources, visit the [Career Services website](https://mycareerspot.org/).
 
-## **Feature List**
+## **Screen Shots**
 
 - 
 
