@@ -67,5 +67,11 @@ For more information about Career Services, including coding milestones, demo da
 - Custom error handling middleware
 - Custom auth & protected route middleware
 
+## **Installation**
+
+1. Clone the repo: `git clone https://github.com/epurpur/ContraList.git `
+2. Install server-side NPM packages: `npm i`
+3. Install client-side NPM packages: `cd client && npm i`
+
 ---
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
