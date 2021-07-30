@@ -28,29 +28,26 @@ const client = new ApolloClient({
 
 function App() {
 
-  // defining empty user type. Will be set to 'contractor' or 'worker' depending on what user chooses
-  const [userType, setUserType] = useState('');
-
   return (
     <ApolloProvider client={client}>
       <UserProvider>
         <Router>
           <div className="App">
-            <Header userType={userType} setUserType={setUserType}/>
+            <Header />
             
             {/* Establishing routes to all endpoints */}
             <Switch>
               <Route exact path="/">
-                <Homepage userType={userType} setUserType={setUserType} />
+                <Homepage />
               </Route>
               <Route exact path="/Login" >
-                <Login userType={userType} setUserType={setUserType} />
+                <Login />
               </Route>          
               <Route exact path="/Register" >
-                <Register userType={userType} />
+                <Register />
               </Route>
               <Route exact path="/LandingPage" >
-                <LandingPage userType={userType} setUserType={setUserType} />
+                <LandingPage />
               </Route> 
               <Route exact path="/NewJob" >
                 <NewJob />
@@ -58,7 +55,7 @@ function App() {
 
               {/* This URL will eventually be changed to /SingleJobPage/:id */} 
               <Route exact path="/SingleJobPage" >
-                <SingleJobPage userType={userType} />
+                <SingleJobPage />
               </Route>    
             </Switch>
       
