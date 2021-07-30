@@ -41,6 +41,7 @@ class AuthService {
     localStorage.setItem('id_token', idToken);
     // Decode idToken and save username to localStorage variable
     const userData = decode(idToken)
+    console.log('USERDATA :::', userData);
     localStorage.setItem('username', userData.data.username);
   }
 

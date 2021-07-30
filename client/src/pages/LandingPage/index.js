@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import './styles.css';
 
 import JobCard from '../../components/JobCard';
+import { UserContext } from '../../utils/UserContext';
 
 
 const LandingPage = ( {userType, setUserType} ) => {
@@ -12,6 +13,7 @@ const LandingPage = ( {userType, setUserType} ) => {
     // SETTING USER TYPE ARTIFICIALLY THIS WILL BE CHANGED LATER
     setUserType('contractor');
 
+    const { userRole, setUserRole } = useContext(UserContext);
 
 
 
@@ -26,7 +28,7 @@ const LandingPage = ( {userType, setUserType} ) => {
     return (
         <div>
             {/* Evaluate userType if it is set to contractor or worker */}
-            {userType === 'contractor' ? 
+            {userRole === 'contractor' ? 
             
             <section id='contractorJobs'>
                 <h1 id='contractorTitle'>Your Active Jobs (contractor)</h1>
