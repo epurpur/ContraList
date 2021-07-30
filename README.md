@@ -1,4 +1,4 @@
-# Unit 23: Final Project
+![Image](client/public/logo1.jpg)
 
 ## Overview
 
