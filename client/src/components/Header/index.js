@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 /* CSS styles */
 import './styles.css';
 
-const Header = ({userType, setUserType}) => {
+const Header = () => {
 
 // TO DO: ADD SOME LOGIC TO CHECK IF USER IS LOGGED IN, RENDER DIFFERENT BUTTONS IF YES
 

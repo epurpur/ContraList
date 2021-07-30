@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 //styles are in /LndingPage/styles.css
 
 
-const JobCard = () => {
+const JobCard = ({userRole}) => {
     return (
         <div id="jobCardsHolder">
             {/* Link to= WILL LINK TO SINGLE JOB PAGE (ex: /SingleJobPage/:id */}
