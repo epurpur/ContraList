@@ -73,5 +73,11 @@ For more information about Career Services, including coding milestones, demo da
 2. Install server-side NPM packages: `npm i`
 3. Install client-side NPM packages: `cd client && npm i`
 
+## **License**
+
+Distributed under the MIT License.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ---
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
