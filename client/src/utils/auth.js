@@ -37,17 +37,20 @@ class AuthService {
   }
 
   login(idToken) {
-    // Saves user token to localStorage and reloads the application for logged in status to take effect
-    // Window is reassigned to the /LandingPage endpoint
+    // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/LandingPage');
+    // Decode idToken and save userId to localStorage variable
+    const userData = decode(idToken)
+    localStorage.setItem('userId', userData.data._id);
+    // window.location.assign('/LandingPage');
   }
 
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
-    // this will reload the page and reset the state of the application
-    window.location.reload();
+    localStorage.removeItem('userId');
+    // this will send user to home page and reset the state of the application
+    window.location.assign('/');
   }
 }
 

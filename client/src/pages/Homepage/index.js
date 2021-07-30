@@ -7,6 +7,7 @@ import './styles.css'
 
 const Homepage = ({userType, setUserType}) => {
 
+
     return (
         <section id="homePageTop"> 
             <h1>Connecting construction jobs and labor. <span id="faster">Faster.</span></h1>

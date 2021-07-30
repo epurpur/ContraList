@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
+import { UserContext } from '../../utils/UserContext';
 
 import Auth from '../../utils/auth';
 
 const LoginForm = () => {
+
+    const { userRole, setUserRole } = useContext(UserContext);
 
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -22,17 +26,18 @@ const LoginForm = () => {
   
     // submit form
     const handleFormSubmit = async (event) => {
-      event.preventDefault();
+
       console.log(formState);
 
       //
       try {
         const { data } = await login({
           variables: { ...formState },
+          
         });
-  
-        // takes login token and stores it in local storage
-        // Also re-assigns window to URL '/LandingPage'
+
+        
+        // takes login token as well as userId (which is decoded) and stores it in local storage
         Auth.login(data.login.token);
       } catch (e) {
         console.error(e);
@@ -53,6 +58,7 @@ const LoginForm = () => {
 
     console.log("Logged In?", Auth.loggedIn())
 
+
     return (
         <section className="loginForm">
             <h1 className="formTitle">Login</h1>
@@ -71,13 +77,14 @@ const LoginForm = () => {
                     value={formState.password}
                     onChange={handleChange}
                 />
-                <button 
+                <Link to='/LandingPage' onClick={handleFormSubmit}>Submit</Link>
+                {/* <button 
                     type="submit" 
                     form="nameform" 
                     onClick={handleFormSubmit}
                 >
                     Submit
-                </button>
+                </button> */}
             </form>
 
             <button type="submit" onClick={logoutUser}>Logout</button>
