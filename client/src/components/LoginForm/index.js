@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
+
+import { QUERY_USER } from '../../utils/queries';
 import { LOGIN_USER } from '../../utils/mutations';
+
+import { UserContext } from '../../utils/UserContext';
 
 import Auth from '../../utils/auth';
 
 const LoginForm = () => {
 
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
+    const { userRole, setUserRole } = useContext(UserContext);
+    const [ formState, setFormState ] = useState({ email: '', password: '' });
+    const [ login, { error, data } ] = useMutation(LOGIN_USER);
+    const { loading, currentUserData } = useQuery(QUERY_USER);
   
     // update state based on form input changes
     const handleChange = (event) => {
@@ -20,19 +27,22 @@ const LoginForm = () => {
       });
     };
   
+
+
     // submit form
     const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      console.log(formState);
+
+      // logs current value of formState
+      console.log('formState upon start of handleFormSubmit ::', formState);
 
       //
       try {
         const { data } = await login({
           variables: { ...formState },
+          
         });
-  
-        // takes login token and stores it in local storage
-        // Also re-assigns window to URL '/LandingPage'
+
+        // takes login token as well as userId (which is decoded) and stores it in local storage
         Auth.login(data.login.token);
       } catch (e) {
         console.error(e);
@@ -43,15 +53,25 @@ const LoginForm = () => {
         email: '',
         password: '',
       });
+
+      //START HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      // makes query to DB for data about this specific user by the username
+      // if currentUserData exists, then give current data about user
+      // I am trying to follow class video MERN class 2 at minute 41
+      const username = localStorage.getItem('username')     // THIS GETS THE USERNAME OF THE CURRENT USER FROM LOCAL STORAGE. THIS WILL BE USED TO MAKE QUERY_USER QUERY
+      
+      //HERE WE NEED TO USE QUERY USER TO GET INFO ABOUT THIS USER AND USE ROLE_ID TO SET VALUE OF USERROLE CONTEXT TO '1' OR '2'
     };
   
     const logoutUser = (event) => {
-    // logs user out. destroys login token in local storage
+    // logs user out. destroys login token and userId in local storage
         event.preventDefault();
         Auth.logout();
     }
 
+    //upon page load, log if user is logged in or not
     console.log("Logged In?", Auth.loggedIn())
+
 
     return (
         <section className="loginForm">
@@ -71,13 +91,10 @@ const LoginForm = () => {
                     value={formState.password}
                     onChange={handleChange}
                 />
-                <button 
-                    type="submit" 
-                    form="nameform" 
-                    onClick={handleFormSubmit}
-                >
-                    Submit
-                </button>
+                <Link to='/LandingPage' onClick={handleFormSubmit}>
+                  <button>Submit</button>
+                </Link>
+
             </form>
 
             <button type="submit" onClick={logoutUser}>Logout</button>

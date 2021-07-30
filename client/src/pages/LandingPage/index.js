@@ -6,7 +6,7 @@ import './styles.css';
 
 import JobCard from '../../components/JobCard';
 
-import { QUERY_ALL_WORKERS } from '../../utils/queries';
+// import { QUERY_ALL_WORKERS } from '../../utils/queries';
 
 const LandingPage = ( {userType, setUserType} ) => {
 
@@ -21,8 +21,8 @@ const LandingPage = ( {userType, setUserType} ) => {
 
 
     //TEST DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
-    const { loading, data } = useQuery(QUERY_ALL_WORKERS);
-    console.log(data);
+    // const { loading, data } = useQuery(QUERY_ALL_WORKERS);
+    // console.log(data);
 
 
 
