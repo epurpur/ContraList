@@ -42,22 +42,23 @@ For more information about Career Services, including coding milestones, demo da
 
 ## Packages & Libraries
 ```
-1. React JS 
-2. GraphQL
-3. JavaScript
-4. Node.js
-5. Express.js
-6. HTML and CSS
-7. Semantic UI (for styling)
-8. Authentication (JWT)
-9. MongoDB and Mongoose ODM
+1.  React JS 
+2.  GraphQL
+3.  JavaScript
+4.  Node.js
+5.  Express.js
+6.  HTML and CSS
+7.  React-Bootstrap
+8.  Authentication (JWT)
+9.  MongoDB and Mongoose ODM
 10. Apollo Server Express
 11. Queries and Mutations
 12. TypeDefs and Resolvers
 13. Jsonwebtoken
 14. DateFormat
 15. Bcrypt
-16 
+16  React-Router-Dom
+17. @Apollo/client
 
 ### Full-Stack Blog Posts
 
