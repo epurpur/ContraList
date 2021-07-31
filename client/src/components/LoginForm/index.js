@@ -23,6 +23,8 @@ const LoginForm = () => {
         ...formState,
         [name]: value,
       });
+
+      console.log(formState);
     };
 
     // submit form
@@ -31,7 +33,7 @@ const LoginForm = () => {
       // logs current value of formState
       console.log('formState upon start of handleFormSubmit ::', formState);
 
-      //
+      // takes data and executes login mutation
       try {
         const { data } = await login({
           variables: { ...formState },
