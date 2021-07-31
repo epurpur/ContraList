@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import { QUERY_JOBS } from '../../utils/queries';
 import './styles.css';
 
 import JobCard from '../../components/JobCard';
@@ -13,8 +13,8 @@ const LandingPage = ()  => {
     const { userRole, setUserRole } = useContext(UserContext);
 
     //TEST DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
-    // const { loading, data } = useQuery(QUERY_JOBS);
-    // console.log(data);
+    const { loading, allJobsData } = useQuery(QUERY_JOBS);
+    
 
 
 
@@ -39,7 +39,7 @@ const LandingPage = ()  => {
                 <p id='headerSubtitle'>(click job card to view more information)</p>
                     {/* Eventually this will make DB call and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
-                    <JobCard userRole={userRole} />
+                    <JobCard userRole={userRole} allJobsData={allJobsData} />
             </section>
         }
         </div>
