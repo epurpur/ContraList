@@ -13,9 +13,22 @@ const LandingPage = ()  => {
     const { userRole, setUserRole } = useContext(UserContext);
 
     //TEST DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
-    const { loading, allJobsData } = useQuery(QUERY_JOBS);
-    
+    const { loading, data } = useQuery(QUERY_JOBS);
+    console.log(data);
+    const makeJobCard =  () => {
+        // this gets all jobs data from 'allJobsData' prop. Makes HTML for each item in allJobsData
 
+        return  data.jobs.map((job) =>
+        (
+            <JobCard 
+                createdAt={job.createdAt}
+                jobText={job.jobText}
+                jobAuthor={job.jobAuthor}
+            /> 
+        ))
+    };
+    
+    
 
 
     return (
@@ -39,7 +52,7 @@ const LandingPage = ()  => {
                 <p id='headerSubtitle'>(click job card to view more information)</p>
                     {/* Eventually this will make DB call and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
-                    <JobCard userRole={userRole} allJobsData={allJobsData} />
+                    {data && makeJobCard()}
             </section>
         }
         </div>
