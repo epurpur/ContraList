@@ -41,6 +41,8 @@ const ContractorRegistrationForm = () => {
 
     //submit user input to create new user in DB, then log in user
     const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
         //logs current value of userInfo
         console.log('User Info upon submission: ', userInfo);
 
@@ -65,6 +67,8 @@ const ContractorRegistrationForm = () => {
             description: ''
         })
     }
+
+
 
 
     return (
@@ -125,7 +129,7 @@ const ContractorRegistrationForm = () => {
                     type="text"
                     required
                 />
-                <button type="submit" onClick={() => console.log('placeholder')}>Submit</button>
+                <button type="submit" onClick={handleFormSubmit}>Submit</button>
             </form>
         </section> 
     )
