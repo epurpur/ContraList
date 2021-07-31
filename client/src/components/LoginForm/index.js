@@ -62,6 +62,7 @@ const LoginForm = () => {
     // logs user out. destroys login token and userId in local storage
         event.preventDefault();
         Auth.logout();
+        
     }
 
     //upon page load, log if user is logged in or not
