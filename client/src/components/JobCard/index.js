@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 //styles are in /LndingPage/styles.css
 
 
-const JobCard = ({userRole}) => {
+const JobCard = ({userRole,allJobsData}) => {
+    console.log('this is from jobCard component',allJobsData);
     return (
         <div id="jobContainer">
             <div className="jobCardsHolder">
