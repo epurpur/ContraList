@@ -8,8 +8,7 @@ import './App.css';
 /* Pages */
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
-import ContractorRegistrationForm from './components/ContractorRegistrationForm';
-import WorkerRegistrationForm from './components/WorkerRegistrationForm';
+import Register from './pages/Register';
 import LandingPage from './pages/LandingPage';
 import NewJob from './pages/NewJob';
 import SingleJobPage from './pages/SingleJobPage';
@@ -44,11 +43,8 @@ function App() {
               <Route exact path="/Login" >
                 <Login />
               </Route>          
-              <Route exact path="/ContractorRegistration" >
-                <ContractorRegistrationForm />
-              </Route>
-              <Route exact path="/WorkerRegistration" >
-                <WorkerRegistrationForm />
+              <Route exact path="/Register" >
+                <Register />
               </Route>
               <Route exact path="/LandingPage" >
                 <LandingPage />
