@@ -36,9 +36,9 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 ![screenshot](client/public/1.jpg)
 ![screenshot](client/public/2.jpg)
 ![screenshot](client/public/3.jpg)
-![screenshot](public/4.jpg)
-![screenshot](public/5.jpg)
-![screenshot](public/6.jpg)
+![screenshot](client/public/4.jpg)
+![screenshot](client/public/5.jpg)
+![screenshot](client/public/6.jpg)
 
 
 ---
