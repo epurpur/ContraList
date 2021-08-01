@@ -70,8 +70,6 @@ const LandingPage = ()  => {
 
     }
 
-    makeMyJobCards();
-
 
 
 
