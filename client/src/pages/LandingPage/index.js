@@ -30,8 +30,49 @@ const LandingPage = ()  => {
     };
     
     const makeMyJobCards = () => {
-        console.log('placeholder');
+    /**
+     * Makes query to DB for all jobs.
+     * Then filters out those jobs which the current user has commented (applied) for
+     * returns job cards for just those jobs which the user has applied for
+     */
+
+        // gets id of currently logged in user
+        const userId = localStorage.getItem('userId');
+
+        // holds all jobs user has applied for
+        const jobsAppliedFor = [];
+
+        // gets data from query: QUERY_JOBS for all active jobs
+        const jobsData = allJobsData.jobs;
+
+        //maps over jobs and then comments for each job for those which the current user has applied for
+        //pushes job of those that match to jobsAppliedFor
+        jobsData && jobsData.map((job) => 
+            job.comments.map((comment) =>
+                userId == comment.commentAuthor && jobsAppliedFor.push(job)
+            )
+        )
+
+        const uniqueJobs = jobsAppliedFor.reduce(function(a, b){
+            if (a.indexOf(b) < 0) a.push(b);
+            return a;
+        }, []);
+    
+        console.log('UNIQUE',uniqueJobs);
+
+        return uniqueJobs.map((job) => (
+                <ActiveJobsCard 
+                    createdAt={job.createdAt}
+                    jobText={job.jobText}
+                    key={job.jobAuthor}
+                /> 
+        ))
+
     }
+
+    makeMyJobCards();
+
+
 
 
     return (
@@ -55,15 +96,9 @@ const LandingPage = ()  => {
                 <p id='headerSubtitle'>(click job card to view more information)</p>
                     <div className='jobContainer'>
                         <div className="jobCardsHolder">
-                            <h1>My Active Jobs</h1>
-                            <Link to='/SingleJobPage' className='jobCard' style={{ textDecoration: 'none' }}>
-                                <p>Job 1</p>
-                                <p> Description </p>
-                                <div className='jobCardBottom'>
-                                    <p>Created by: 'contractor name'</p>
-                                    <p>Date: 7/22/2021</p>
-                                </div>
-                            </Link>
+                            <h1>Jobs You Have Applied For</h1>
+                            {/* useQuery is asynchronous, so when allJobsData is available, then execute makeMyJobCards */}
+                            {allJobsData && makeMyJobCards()}
                         </div>
                         
                         <div className="jobCardsHolder">

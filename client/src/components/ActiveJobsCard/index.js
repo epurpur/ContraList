@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const JobCard = ({ createdAt, jobText, jobAuthor }) => {
+const ActiveJobsCard = ({ createdAt, jobText, jobAuthor }) => {
 
     {/* Link to= WILL LINK TO SINGLE JOB PAGE (ex: /SingleJobPage/:id */}
     return (
@@ -12,5 +12,5 @@ const JobCard = ({ createdAt, jobText, jobAuthor }) => {
     )
 }
 
-export default JobCard;
+export default ActiveJobsCard;
 
