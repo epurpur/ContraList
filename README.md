@@ -6,6 +6,7 @@
 
 1. [Description](#Description)
 1. [User Story](#User-Story)
+1. [Deploy Links](#Deploy-Links)
 1. [Screen Shots](#Screen-Shots)
 1. [Packages & Libraries](#Packages-&-Libraries)
 1. [Tech Stack](#Tech-Stack)
@@ -29,14 +30,20 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 
 
 ---
+## DEPLOYED LINKS
+* [VIEW LIVE APP]()
+* [GITHUB](https://github.com/epurpur/ContraList)
 
-## Career Connection
-
-For more information about Career Services, including coding milestones, demo days, technical toolkits, workshops, and additional resources, visit the [Career Services website](https://mycareerspot.org/).
 
 ## **Screen Shots**
 
-- 
+![screenshot](client/public/1.jpg)
+![screenshot](client/public/2.jpg)
+![screenshot](client/public/3.jpg)
+![screenshot](client/public/4.jpg)
+![screenshot](client/public/5.jpg)
+![screenshot](client/public/6.jpg)
+
 
 ---
 
@@ -45,15 +52,14 @@ For more information about Career Services, including coding milestones, demo da
 1.  GraphQL
 2.  JavaScript
 3.  HTML and CSS
-4.  React-Bootstrap
-5.  Authentication (Jsonwebtoken)
-6.  Apollo Server Express
-7.  Queries and Mutations
-8.  TypeDefs and Resolvers
-9.  DateFormat
-10. Bcrypt
-11. React-Router-Dom
-12. @Apollo/client
+4.  Authentication (Jsonwebtoken)
+5.  Apollo Server Express
+6.  Queries and Mutations
+7.  TypeDefs and Resolvers
+8.  DateFormat
+9.  Bcrypt
+10. React-Router-Dom
+11. @Apollo/client
 ```
 ## **Tech Stack**
 
@@ -64,8 +70,8 @@ For more information about Career Services, including coding milestones, demo da
 
 
 ## Additional Technologies
-- Custom error handling middleware
-- Custom auth & protected route middleware
+- Error handling middleware
+- Auth & protected route middleware
 
 ## **Installation**
 
