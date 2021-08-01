@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
@@ -7,13 +7,6 @@ import Auth from '../../utils/auth';
 import { ADD_USER, LOGIN_USER } from '../../utils/mutations';
 
 const ContractorRegistrationForm = () => {
-
-    /**
-     * Steps needed:
-     * Xget user input values from form 
-     * X-useMutation of ADD_USER to create new user
-     * -when new user created, log user in and redirect to landing page
-     */
 
     // get user input values from form. Start by setting values in state
     const [ userInfo, setUserInfo ] = useState({
@@ -131,7 +124,7 @@ const ContractorRegistrationForm = () => {
                 />
                 <label required>Description:</label>
                 <textarea 
-                    placeholder="Briefly describe yourself" 
+                    placeholder="Write a summary about yourself describing who you are and what you are looking for" 
                     name="description"
                     value={userInfo.description}
                     onChange={handleChange}

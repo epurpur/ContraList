@@ -29,7 +29,7 @@ const LoginForm = () => {
     const handleFormSubmit = async (event) => {
 
       // logs current value of formState
-      console.log('formState upon start of handleFormSubmit ::', formState);
+      console.log('formState upon submission ::', formState);
       
       // takes data and executes login mutation
       try {
@@ -56,7 +56,7 @@ const LoginForm = () => {
       setUserRole(roleId);
     };
   
-    
+
     //upon page load, log if user is logged in or not
     console.log("Logged In?", Auth.loggedIn())
 
