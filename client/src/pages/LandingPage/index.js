@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_JOBS } from '../../utils/queries';
 import './styles.css';
 
-import JobCard from '../../components/JobCard';
+import ActiveJobsCard from '../../components/ActiveJobsCard';
 import { UserContext } from '../../utils/UserContext';
 
 
@@ -20,8 +20,7 @@ const LandingPage = ()  => {
 
         return  allJobsData.jobs.map((job) =>
         (
-            <JobCard 
-            
+            <ActiveJobsCard 
                 createdAt={job.createdAt}
                 jobText={job.jobText}
                 key={job.jobAuthor}
@@ -42,14 +41,14 @@ const LandingPage = ()  => {
                 <p id='headerSubtitle'>(click job card to view more information)</p>
                     {/* Eventually this will make DB call and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
-                    <JobCard userRole={userRole} />
+                    <ActiveJobsCard userRole={userRole} />
                 <Link id='newJobButton' className='links' to='/NewJob' style={{ textDecoration: 'none' }}> Create New Job </Link>
             </section>
             
             // else if userRole != 'contractor', userRole will be 'worker'
             : 
             <section id='contractorJobs'>
-                <h1 id='contractorTitle'>All Active Jobs (worker)</h1>
+                <h1 id='contractorTitle'>View Jobs (worker)</h1>
                 <p id='headerSubtitle'>(click job card to view more information)</p>
                     <div className='jobContainer'>
                         <div className="jobCardsHolder">
