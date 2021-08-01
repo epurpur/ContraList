@@ -6,6 +6,7 @@
 
 1. [Description](#Description)
 1. [User Story](#User-Story)
+1. [Deploy Links](#Deploy-Links)
 1. [Screen Shots](#Screen-Shots)
 1. [Packages & Libraries](#Packages-&-Libraries)
 1. [Tech Stack](#Tech-Stack)
@@ -29,6 +30,9 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 
 
 ---
+## DEPLOYED LINKS
+* [VIEW LIVE APP](https://lightcville.herokuapp.com/login)
+* [GITHUB](https://github.com/epurpur/lightCville.git)
 
 
 ## **Screen Shots**
