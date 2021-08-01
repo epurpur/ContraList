@@ -48,15 +48,14 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 1.  GraphQL
 2.  JavaScript
 3.  HTML and CSS
-4.  React-Bootstrap
-5.  Authentication (Jsonwebtoken)
-6.  Apollo Server Express
-7.  Queries and Mutations
-8.  TypeDefs and Resolvers
-9.  DateFormat
-10. Bcrypt
-11. React-Router-Dom
-12. @Apollo/client
+4.  Authentication (Jsonwebtoken)
+5.  Apollo Server Express
+6.  Queries and Mutations
+7.  TypeDefs and Resolvers
+8.  DateFormat
+9. Bcrypt
+10. React-Router-Dom
+11. @Apollo/client
 ```
 ## **Tech Stack**
 
