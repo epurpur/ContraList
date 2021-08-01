@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
@@ -6,10 +6,16 @@ import Auth from '../../utils/auth';
 // Mutations
 import { ADD_USER, LOGIN_USER } from '../../utils/mutations';
 
+// Context 
+import { UserContext } from '../../utils/UserContext';
+
 // Styles
 import '../../pages/Register/styles.css'
 
 const WorkerRegistrationForm = () => {
+
+    // define userRole context
+    const { userRole, setUserRole } = useContext(UserContext);
 
     // get user input values from form. Start by setting values in state
     const [ userInfo, setUserInfo ] = useState({
@@ -69,6 +75,13 @@ const WorkerRegistrationForm = () => {
             roleId: '2',
             description: ''
         });
+
+        //get roleId value of user from localstorage
+        const roleId = localStorage.getItem('roleId');
+
+        //setUserRole context to value of roleId
+        setUserRole(roleId);
+
     }
 
 
