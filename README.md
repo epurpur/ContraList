@@ -31,8 +31,8 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 
 ---
 ## DEPLOYED LINKS
-* [VIEW LIVE APP](https://lightcville.herokuapp.com/login)
-* [GITHUB](https://github.com/epurpur/lightCville.git)
+* [VIEW LIVE APP]()
+* [GITHUB](https://github.com/epurpur/ContraList)
 
 
 ## **Screen Shots**
