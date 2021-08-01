@@ -34,8 +34,8 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 ## **Screen Shots**
 
 ![screenshot](public/1.jpg)
-![screenshot](public/images/2.jpg)
-![screenshot](public/images/3.jpg)
+![screenshot](public/2.jpg)
+![screenshot](public/3.jpg)
 ![screenshot](public/images/4.jpg)
 ![screenshot](public/images/5.jpg)
 ![screenshot](public/images/6.jpg)
