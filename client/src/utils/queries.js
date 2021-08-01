@@ -47,6 +47,16 @@ export const QUERY_SINGLE_JOB = gql`
   }
 `;
 
+export const QUERY_JOBAUTHOR = gql`
+ query jobAuthor($jobAuthor:String!) {
+    jobAuthor(jobAuthor: $jobAuthor) {
+    _id
+    createdAt
+    jobText
+  }
+}
+`;
+
 
 
 

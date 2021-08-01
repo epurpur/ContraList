@@ -23,23 +23,27 @@ const typeDefs = gql`
          comments:[Comment]
 
      }
+
      type Comment {
-    _id: ID
-    commentText: String
-    commentAuthor: String
-    createdAt: String
-  }
-  type Auth {
-    token: ID!
-    user: User
-  }
+        _id: ID
+        commentText: String
+        commentAuthor: String
+        createdAt: String
+      }
+
+    type Auth {
+        token: ID!
+        user: User
+      }
 
     type Query {
-    users: [User]
-    user(username: String!): User
-    jobs(username: String): [Job]
-    job(jobId: ID!): Job
-  }
+      users: [User]
+      user(username: String!): User
+      jobs(username: String): [Job]
+      job(jobId: ID!): Job
+      jobAuthor(jobAuthor: String!): [Job]
+    }
+
     type Mutation{
     addUser(username: String!, email: String!, password: String!,phoneNumber:String!,licenseNumber:String,roleId:String!,description:String!): Auth
     login(email: String!, password: String!): Auth
