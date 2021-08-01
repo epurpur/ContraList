@@ -1,14 +1,17 @@
-import { useMutation } from '@apollo/client';
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
 
-import { ADD_USER } from '../../utils/mutations';
+// Mutations
+import { ADD_USER, LOGIN_USER } from '../../utils/mutations';
 
 const ContractorRegistrationForm = () => {
 
     /**
      * Steps needed:
      * Xget user input values from form 
-     * -useMutation of ADD_USER to create new user
+     * X-useMutation of ADD_USER to create new user
      * -when new user created, log user in and redirect to landing page
      */
 
@@ -25,6 +28,9 @@ const ContractorRegistrationForm = () => {
 
     // invoke useMutation hook to allow adding new user
     const [addUser, {error, data}] = useMutation(ADD_USER);
+    //invoke useMutation hook to allow login
+    const [ login, { error:err, data:loginData } ] = useMutation(LOGIN_USER);  
+
 
     //update state based on form input changes
     const handleChange = (event) => {
@@ -41,20 +47,23 @@ const ContractorRegistrationForm = () => {
 
     //submit user input to create new user in DB, then log in user
     const handleFormSubmit = async (event) => {
-        event.preventDefault();
 
         //logs current value of userInfo
-        console.log('User Info upon submission: ', userInfo);
+        console.log('User Info upon submission:: ', userInfo);
 
-        // takes data and executes addUser mutation
+        
         try {
+            // takes data and executes addUser mutation
             const { data } = await addUser({
                 variables: {...userInfo}
+
             });
+
+            // takes data and logs user in
+            Auth.login(data.addUser.token);
         } catch (e) {
             console.error(e);
         };
-
 
         // clear form values
         setUserInfo({
@@ -65,7 +74,7 @@ const ContractorRegistrationForm = () => {
             licenseNumber: '',
             roleId: '1',
             description: ''
-        })
+        });
     }
 
 
@@ -129,7 +138,9 @@ const ContractorRegistrationForm = () => {
                     type="text"
                     required
                 />
-                <button type="submit" onClick={handleFormSubmit}>Submit</button>
+                <Link to='/LandingPage' onClick={handleFormSubmit}>
+                    <button>Submit</button>
+                </Link>
             </form>
         </section> 
     )
