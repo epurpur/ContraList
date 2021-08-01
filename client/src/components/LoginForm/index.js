@@ -5,7 +5,6 @@ import Auth from '../../utils/auth';
 
 // Queries and Mutations
 import { LOGIN_USER } from '../../utils/mutations';
-
 import { UserContext } from '../../utils/UserContext';
 
 
@@ -57,13 +56,7 @@ const LoginForm = () => {
       setUserRole(roleId);
     };
   
-    const logoutUser = (event) => {
-    // logs user out. destroys login token and userId in local storage
-        event.preventDefault();
-        Auth.logout();
-        
-    }
-
+    
     //upon page load, log if user is logged in or not
     console.log("Logged In?", Auth.loggedIn())
 
