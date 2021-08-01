@@ -12,8 +12,9 @@ const LandingPage = ()  => {
 
     const { userRole, setUserRole } = useContext(UserContext);
 
-    //TEST DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
+    //DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
     const { loading, data:allJobsData } = useQuery(QUERY_JOBS);
+    
 
     const makeActiveJobCards =  () => {
         // this gets all jobs data from 'allJobsData' prop. Makes HTML for each item in allJobsData
@@ -28,7 +29,9 @@ const LandingPage = ()  => {
         ))
     };
     
-    
+    const makeMyJobCards = () => {
+        console.log('placeholder');
+    }
 
 
     return (
