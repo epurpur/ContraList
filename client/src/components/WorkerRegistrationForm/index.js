@@ -6,6 +6,9 @@ import Auth from '../../utils/auth';
 // Mutations
 import { ADD_USER, LOGIN_USER } from '../../utils/mutations';
 
+// Styles
+import '../../pages/Register/styles.css'
+
 const WorkerRegistrationForm = () => {
 
     // get user input values from form. Start by setting values in state
