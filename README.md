@@ -53,7 +53,7 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 6.  Queries and Mutations
 7.  TypeDefs and Resolvers
 8.  DateFormat
-9. Bcrypt
+9.  Bcrypt
 10. React-Router-Dom
 11. @Apollo/client
 ```
@@ -66,8 +66,8 @@ _AS A_ Worker I want to be able to find the right job for my skills and apply fo
 
 
 ## Additional Technologies
-- Custom error handling middleware
-- Custom auth & protected route middleware
+- Error handling middleware
+- Auth & protected route middleware
 
 ## **Installation**
 
