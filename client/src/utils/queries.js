@@ -27,6 +27,9 @@ export const QUERY_JOBS = gql`
       jobText
       jobAuthor
       createdAt
+      comments{
+        commentAuthor
+      }
     }
   }
 `;
