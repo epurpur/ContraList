@@ -33,12 +33,17 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+ 
 
+  
     type Query {
     users: [User]
     user(username: String!): User
     jobs(username: String): [Job]
     job(jobId: ID!): Job
+    jobAuthor(jobAuthor:String):[Job]
+    commentAuthor(commentAuthor:String):[Comment]
+    
   }
     type Mutation{
     addUser(username: String!, email: String!, password: String!,phoneNumber:String!,licenseNumber:String,roleId:String!,description:String!): Auth
@@ -51,7 +56,8 @@ const typeDefs = gql`
     ): Job
     removeJob(jobId: ID!): Job
     removeComment(jobId: ID!, commentId: ID!): Job
-  } 
+   
+    }
 `;
 
 module.exports = typeDefs;

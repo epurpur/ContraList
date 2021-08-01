@@ -17,6 +17,12 @@ const resolvers = {
           job: async (parent, { jobId }) => {
             return Job.findOne({ _id: jobId });
           },
+          jobAuthor:async( parent ,{jobAuthor})=>{
+            return Job.find({jobAuthor:jobAuthor});
+          },
+          commentAuthor:async(parent,{commentAuthor})=>{
+            return Job.find({commentAuthor:commentAuthor});
+          }
         },
     Mutation:{
         addUser: async (parent, { username, email, password,phoneNumber,licenseNumber,roleId,description }) => {
