@@ -39,14 +39,16 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
-    // Decode idToken and save roleId to localStorage variable
+    // Decode idToken and save userId, roleId to localStorage variable
     const userData = decode(idToken)
+    localStorage.setItem('userId', userData.data._id);
     localStorage.setItem('roleId', userData.data.roleId);
   }
 
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
+    localStorage.removeItem('userId');
     localStorage.removeItem('roleId');
     // this will send user to home page and reset the state of the application
     window.location.assign('/');

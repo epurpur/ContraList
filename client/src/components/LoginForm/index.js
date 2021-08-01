@@ -1,13 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
 
 // Queries and Mutations
 import { LOGIN_USER } from '../../utils/mutations';
-
 import { UserContext } from '../../utils/UserContext';
 
-import Auth from '../../utils/auth';
 
 const LoginForm = () => {
 
@@ -23,30 +22,27 @@ const LoginForm = () => {
         ...formState,
         [name]: value,
       });
-
-      console.log(formState);
     };
+
 
     // submit form
     const handleFormSubmit = async (event) => {
 
       // logs current value of formState
       console.log('formState upon start of handleFormSubmit ::', formState);
-
+      
       // takes data and executes login mutation
       try {
         const { data } = await login({
           variables: { ...formState },
-          
         });
 
         // takes login token as well as userId (which is decoded) and stores it in local storage
         Auth.login(data.login.token);
-
       } catch (e) {
         console.error(e);
       }
-  
+
       // clear form values
       setFormState({
         email: '',
@@ -60,13 +56,7 @@ const LoginForm = () => {
       setUserRole(roleId);
     };
   
-    const logoutUser = (event) => {
-    // logs user out. destroys login token and userId in local storage
-        event.preventDefault();
-        Auth.logout();
-        
-    }
-
+    
     //upon page load, log if user is logged in or not
     console.log("Logged In?", Auth.loggedIn())
 
@@ -92,10 +82,7 @@ const LoginForm = () => {
                 <Link to='/LandingPage' onClick={handleFormSubmit}>
                   <button>Submit</button>
                 </Link>
-
             </form>
-
-            <button type="submit" onClick={logoutUser}>Logout</button>
         </section> 
     )
 }
