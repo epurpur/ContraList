@@ -27,6 +27,9 @@ export const QUERY_JOBS = gql`
       jobText
       jobAuthor
       createdAt
+      location
+      duration
+      otherComments
       comments{
         commentAuthor
       }
@@ -56,6 +59,9 @@ export const QUERY_JOBAUTHOR = gql`
     _id
     createdAt
     jobText
+    location
+    duration
+    otherComments
   }
 }
 `;

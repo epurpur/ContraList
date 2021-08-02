@@ -1,31 +1,60 @@
 import React, {useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_JOBS } from '../../utils/queries';
-import './styles.css';
-
+import { QUERY_JOBS, QUERY_JOBAUTHOR } from '../../utils/queries';
 import ActiveJobsCard from '../../components/ActiveJobsCard';
 import { UserContext } from '../../utils/UserContext';
+
+
+// css styles
+import './styles.css';
+
 
 
 const LandingPage = ()  => {
 
     const { userRole, setUserRole } = useContext(UserContext);
 
+    const userId = localStorage.getItem('userId');
+
     //DB CALLS USING GRAPHQL AND APOLLO SERVER using USEQUERY HOOK
     const { loading, data:allJobsData } = useQuery(QUERY_JOBS);
+    // add params jobAuthor to query
+    const { loading:load, data:jobAuthorData } = useQuery(QUERY_JOBAUTHOR, {variables: {jobAuthor: userId}});
     
+    // jobAuthorData && console.log('jobAuthorData', jobAuthorData.jobAuthor);
 
-    const makeActiveJobCards =  () => {
+    const makeContractorJobCards = () => {
+    // this gets all job data for currently logged in contractor. Makes HTML for each item in jobAuthorData
+
+        return jobAuthorData.jobAuthor.map((job) => 
+        (
+            <ActiveJobsCard 
+                key={job._id}
+                id={job._id}
+                createdAt={job.createdAt}
+                jobText={job.jobText}
+                location={job.location}
+                duration={job.duration}
+                otherComments={job.otherComments}
+            />
+        ))
+    }
+
+
+    const makeActiveJobCards = () => {
         // this gets all jobs data from 'allJobsData' prop. Makes HTML for each item in allJobsData
 
         return  allJobsData.jobs.map((job) =>
         (
             <ActiveJobsCard
-                id={job._id} 
+                key={job._id}
+                id={job._id}
                 createdAt={job.createdAt}
                 jobText={job.jobText}
-                key={job.jobAuthor}
+                location={job.location}
+                duration={job.duration}
+                otherComments={job.otherComments}
             /> 
         ))
     };
@@ -63,15 +92,17 @@ const LandingPage = ()  => {
 
         return uniqueJobs.map((job) => (
                 <ActiveJobsCard 
+                    key={job._id}
                     id={job._id}
                     createdAt={job.createdAt}
                     jobText={job.jobText}
-                    key={job.jobAuthor}
+                    location={job.location}
+                    duration={job.duration}
+                    otherComments={job.otherComments}
                 /> 
         ))
 
     }
-
 
     return (
         <div>
@@ -79,12 +110,12 @@ const LandingPage = ()  => {
             {userRole === '1' ? 
             
             <section id='contractorJobs'>
-                <h1 id='contractorTitle'>Your Active Jobs (contractor)</h1>
-                <p id='headerSubtitle'>(click job card to view more information)</p>
-                    {/* Eventually this will make DB call and get active jobs related to specific contractor */}
-                    {/* Will then map over each job and render card here */}
-                    <ActiveJobsCard userRole={userRole} />
+                <h1 id='contractorTitle'>Your Active Jobs</h1>
                 <Link id='newJobButton' className='links' to='/NewJob' style={{ textDecoration: 'none' }}> Create New Job </Link>
+                <p id='headerSubtitle'>(click job card to view more information)</p>
+                    {/* make DB call to get jobAuthorData and get active jobs related to specific contractor */}
+                    {/* Will then map over each job and render card here */}
+                    {jobAuthorData && makeContractorJobCards()}
             </section>
             
             // else if userRole != 'contractor', userRole will be 'worker'

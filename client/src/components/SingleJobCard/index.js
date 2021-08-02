@@ -31,15 +31,15 @@ const SingleJobCard = () => {
                 </div>
                 <div className='singleJobInfo'>
                     <p>Location:</p>
-                    <p>Short Pump, VA</p>
+                    <p>{data.state.location}</p>
                 </div>
                 <div className='singleJobInfo'>
                     <p>Duration:</p>
-                    <p>2 Weeks July 21 through August 6</p>
+                    <p>{data.state.duration}</p>
                 </div>
                 <div className='singleJobInfo'>
                     <p>Other Comments:</p>
-                    <p>Looking for experienced carpenters, painters, electricians and roofers.</p>
+                    <p>{data.state.otherComments}</p>
                 </div>
                 <button id='applyBtn'>Apply for Job</button>
             </div>

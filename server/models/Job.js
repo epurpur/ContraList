@@ -18,14 +18,23 @@ const jobSchema = new Schema({
     type: Date,
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
-    
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  duration: {
+    type: String,
+    required: true,
+  },
+  otherComments: {
+    type: String
   },
   comments: [
     {
       commentText: {
         type: String,
-        required: true,
-        minlength: 1,
+        minlength: 0,
         maxlength: 280,
       },
       commentAuthor: {
