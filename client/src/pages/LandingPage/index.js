@@ -22,7 +22,7 @@ const LandingPage = ()  => {
         return  allJobsData.jobs.map((job) =>
         (
             <ActiveJobsCard
-                id={job._id} 
+                test={job._id} 
                 createdAt={job.createdAt}
                 jobText={job.jobText}
                 key={job.jobAuthor}
@@ -79,7 +79,7 @@ const LandingPage = ()  => {
             {userRole === '1' ? 
             
             <section id='contractorJobs'>
-                <h1 id='contractorTitle'>Your Active Jobs (contractor)</h1>
+                <h1 id='contractorTitle'>Your Active Jobs</h1>
                 <p id='headerSubtitle'>(click job card to view more information)</p>
                     {/* Eventually this will make DB call and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
