@@ -24,8 +24,7 @@ const jobSchema = new Schema({
     {
       commentText: {
         type: String,
-        required: true,
-        minlength: 1,
+        minlength: 0,
         maxlength: 280,
       },
       commentAuthor: {
