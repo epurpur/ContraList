@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import './styles.css';
-
 import SingleJobCard from '../../components/SingleJobCard';
 
+// styles
+import './styles.css';
+
+
 const SingleJob = ( {userType} ) => {
-    
-    // TO DO: DB QUERY WILL POPULATE ALL THIS INFORMATION SUCH AS JOB TITLE, JOB DESCRIPTION, ETC
     
     return (
         <div>
@@ -31,7 +30,6 @@ const SingleJob = ( {userType} ) => {
             <>
                 <section id="singleJob">
                     <SingleJobCard />
-                    <button>Submit Your Application</button>
                 </section>
                 
             </>}

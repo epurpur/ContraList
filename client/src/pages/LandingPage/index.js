@@ -21,7 +21,8 @@ const LandingPage = ()  => {
 
         return  allJobsData.jobs.map((job) =>
         (
-            <ActiveJobsCard 
+            <ActiveJobsCard
+                id={job._id} 
                 createdAt={job.createdAt}
                 jobText={job.jobText}
                 key={job.jobAuthor}
@@ -35,7 +36,7 @@ const LandingPage = ()  => {
      * Then filters out those jobs which the current user has commented (applied) for
      * returns job cards for just those jobs which the user has applied for
      */
-
+        console.log('ALLJOBSDATA', allJobsData.jobs)
         // gets id of currently logged in user
         const userId = localStorage.getItem('userId');
 
@@ -62,6 +63,7 @@ const LandingPage = ()  => {
 
         return uniqueJobs.map((job) => (
                 <ActiveJobsCard 
+                    id={job._id}
                     createdAt={job.createdAt}
                     jobText={job.jobText}
                     key={job.jobAuthor}
@@ -69,8 +71,6 @@ const LandingPage = ()  => {
         ))
 
     }
-
-
 
 
     return (

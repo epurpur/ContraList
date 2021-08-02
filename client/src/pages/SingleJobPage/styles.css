@@ -14,10 +14,11 @@
 
 #singleJob {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    margin: 0 0 10px 0;
 }
 
 #linkHolder {
@@ -48,6 +49,10 @@
     padding: 10px;
 }
 
+#singleJobCard:nth-child(1) {
+    align-items: center;
+}
+
 .singleJobInfo {
     display: flex;
     flex-direction: row;
@@ -55,6 +60,10 @@
 
 .singleJobInfo p {
     padding: 10px;
+}
+
+#applyBtn {
+    border: 3px solid var(--text-logo-orange);
 }
 
 #applicants {
@@ -68,3 +77,5 @@
     margin: 10px;
     padding: 10px;
 }
+
+
