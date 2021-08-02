@@ -25,8 +25,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_JOB = gql`
-  mutation addJob($jobText: String!, $jobAuthor: String!) {
-    addJob(jobText: $jobText, jobAuthor: $jobAuthor) {
+  mutation addJob($jobText: String!, $jobAuthor: String!, $location: String!, $duration: String!, $otherComments: String!) {
+    addJob(jobText: $jobText, jobAuthor: $jobAuthor, location: $location, duration: $duration, otherComments: $otherComments) {
       _id
       jobText
       jobAuthor

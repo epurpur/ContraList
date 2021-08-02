@@ -22,12 +22,12 @@ const resolvers = {
           }
         },
     Mutation:{
-        addUser: async (parent, { username, email, password,phoneNumber,licenseNumber,roleId,description }) => {
-            const user = await User.create({ username, email, password,phoneNumber,licenseNumber,roleId,description });
+        addUser: async (parent, { username, email, password, phoneNumber, licenseNumber, roleId, description }) => {
+            const user = await User.create({ username, email, password, phoneNumber, licenseNumber, roleId, description });
             const token = signToken(user);
             return { token, user };
           },
-          login: async (parent, { email, password }) => {
+        login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
       
             if (!user) {
@@ -43,8 +43,8 @@ const resolvers = {
       
             return { token, user };
           },
-          addJob: async (parent, { jobText, jobAuthor }) => {
-            const job = await Job.create({ jobText, jobAuthor });
+          addJob: async (parent, { jobText, jobAuthor, location, duration, otherComments }) => {
+            const job = await Job.create({ jobText, jobAuthor, location, duration, otherComments });
       
             await User.findOneAndUpdate(
               { username: jobAuthor },

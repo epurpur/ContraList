@@ -20,6 +20,9 @@ const typeDefs = gql`
          jobText:String
          jobAuthor:String
          createdAt:String
+         location:String
+         duration:String
+         otherComments:String
          comments:[Comment]
 
      }
@@ -47,12 +50,8 @@ const typeDefs = gql`
     type Mutation{
     addUser(username: String!, email: String!, password: String!,phoneNumber:String!,licenseNumber:String,roleId:String!,description:String!): Auth
     login(email: String!, password: String!): Auth
-    addJob(jobText: String!, jobAuthor: String!): Job
-    addComment(
-      jobId: ID!
-      commentText: String!
-      commentAuthor: String!
-    ): Job
+    addJob(jobText: String!, jobAuthor: String!, location: String!, duration: String!, otherComments: String!): Job
+    addComment(jobId: ID!, commentText: String!, commentAuthor: String!): Job
     removeJob(jobId: ID!): Job
     removeComment(jobId: ID!, commentId: ID!): Job
   } 
