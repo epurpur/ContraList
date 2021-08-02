@@ -1,19 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useLocation} from "react-router-dom";
+import { useMutation } from '@apollo/client';
+
+import { ADD_COMMENT } from '../../utils/mutations';
 
 const SingleJobCard = () => {
 
     // data passed in as state from ActiveJobsCard
     let data = useLocation();
-    console.log(data.state);
+    console.log('DATA AVAILABLE', data.state)
+
+    //gets ID of current user
+    const userId = localStorage.getItem('userId');
+
+    // commentInfo set to ID of current job and id of currently logged in user
+    const [ commentInfo, setCommentInfo ] = useState({jobId: data.state.id, commentAuthor: userId})
+    // executes ADD_COMMENT mutation
+    const [ apply, {error, data:CommentData} ] = useMutation(ADD_COMMENT);
+
+    const submitAlert = () => {
+        alert('Your application has been submitted!');
+    }
 
     return (
         <>
             <div id='singleJobCard'>
-                <div className='singleJobInfo'>
-                    <p>Job ID:</p>
-                    <p> {data.state.id} </p>
-                </div>
                 <div className='singleJobInfo'>
                     <p>Job Description:</p>
                     <p> {data.state.jobText} </p>
@@ -28,10 +39,9 @@ const SingleJobCard = () => {
                 </div>
                 <div className='singleJobInfo'>
                     <p>Other Comments:</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Looking for experienced carpenters, painters, electricians and roofers.</p>
                 </div>
+                <button id='applyBtn'>Apply for Job</button>
             </div>
         </>
     )

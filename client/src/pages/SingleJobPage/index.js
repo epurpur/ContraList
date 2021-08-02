@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
 import SingleJobCard from '../../components/SingleJobCard';
 
 // styles
 import './styles.css';
 
-import { ADD_COMMENT } from '../../utils/mutations';
 
 const SingleJob = ( {userType} ) => {
-    
-    const [ commentInfo, setCommentInfo ] = useState({jobId: '', commentAuthor: ''})
-    const [ apply, {error, data} ] = useMutation(ADD_COMMENT);
-
-    const submitAlert = () => {
-        alert('Your application has been submitted!');
-    }
     
     return (
         <div>
@@ -39,7 +30,6 @@ const SingleJob = ( {userType} ) => {
             <>
                 <section id="singleJob">
                     <SingleJobCard />
-                    <button>Apply for Job</button>
                 </section>
                 
             </>}
