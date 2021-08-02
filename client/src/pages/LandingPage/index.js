@@ -21,7 +21,8 @@ const LandingPage = ()  => {
 
         return  allJobsData.jobs.map((job) =>
         (
-            <ActiveJobsCard 
+            <ActiveJobsCard
+                id={job._id} 
                 createdAt={job.createdAt}
                 jobText={job.jobText}
                 key={job.jobAuthor}
@@ -62,6 +63,7 @@ const LandingPage = ()  => {
 
         return uniqueJobs.map((job) => (
                 <ActiveJobsCard 
+                    id={job._id}
                     createdAt={job.createdAt}
                     jobText={job.jobText}
                     key={job.jobAuthor}
@@ -69,8 +71,6 @@ const LandingPage = ()  => {
         ))
 
     }
-
-
 
 
     return (

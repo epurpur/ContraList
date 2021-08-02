@@ -58,7 +58,7 @@ function App() {
               </Route>    
 
               {/* This URL will eventually be changed to /SingleJobPage/:id */} 
-              <Route exact path="/SingleJobPage" >
+              <Route exact path="/SingleJobPage/:id" >
                 <SingleJobPage />
               </Route>    
             </Switch>
