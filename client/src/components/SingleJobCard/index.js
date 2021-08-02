@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import { useMutation } from '@apollo/client';
 import { UserContext } from '../../utils/UserContext';
 import { ADD_COMMENT } from '../../utils/mutations';
@@ -17,12 +17,23 @@ const SingleJobCard = () => {
     const userId = localStorage.getItem('userId');
 
     // commentInfo set to ID of current job and id of currently logged in user
-    const [ commentInfo, setCommentInfo ] = useState({jobId: data.state.id, commentAuthor: userId})
+    // keeping commentText as empty string. In the future could use this for more
+    const [ commentInfo, setCommentInfo ] = useState({jobId: data.state.id, commentText: '', commentAuthor: userId})
     // executes ADD_COMMENT mutation
-    const [ apply, {error, data:CommentData} ] = useMutation(ADD_COMMENT);
+    const [ applyComment, {error, data:CommentData} ] = useMutation(ADD_COMMENT);
 
     const makeComment = async (event) => {
-        event.preventDefault();
+        
+        try {
+            // takes commentInfo data and executes addCommment mutation
+            const { CommentData } = await applyComment({
+                variables: {...commentInfo}
+            }); 
+        } catch (e) {
+            console.error(e);
+        }
+
+        alert('Your application has been submitted!');
     }
 
 
@@ -55,7 +66,7 @@ const SingleJobCard = () => {
                     <p>{data.state.otherComments}</p>
                 </div>
                 {/* Render 'apply for job' button conditionally if user is a worker */}
-                {userRole === '2' && <button id='applyBtn'>Apply for Job</button>}
+                {userRole === '2' && <Link to='/LandingPage' onClick={makeComment}><button id='applyBtn'>Apply for Job</button></Link>}
             </div>
         </>
     )
