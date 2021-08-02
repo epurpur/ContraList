@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_JOBS, QUERY_JOBAUTHOR } from '../../utils/queries';
@@ -147,14 +147,3 @@ export default LandingPage;
 
 
 
-{/* <div className="jobCardsHolder">
-    <h1>My Active Jobs</h1>
-    <Link to='/SingleJobPage' className='jobCard' style={{ textDecoration: 'none' }}>
-        <p>Job 1</p>
-        <p> Description </p>
-        <div className='jobCardBottom'>
-            <p>Created by: 'contractor name'</p>
-            <p>Date: 7/22/2021</p>
-        </div>
-    </Link>
-</div> */}
