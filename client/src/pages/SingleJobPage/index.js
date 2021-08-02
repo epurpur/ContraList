@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
 
 import './styles.css';
 
@@ -7,7 +8,9 @@ import SingleJobCard from '../../components/SingleJobCard';
 
 const SingleJob = ( {userType} ) => {
     
-    // TO DO: DB QUERY WILL POPULATE ALL THIS INFORMATION SUCH AS JOB TITLE, JOB DESCRIPTION, ETC
+    const submitAlert = () => {
+        alert('Your application has been submitted!');
+    }
     
     return (
         <div>
@@ -31,7 +34,7 @@ const SingleJob = ( {userType} ) => {
             <>
                 <section id="singleJob">
                     <SingleJobCard />
-                    <button>Submit Your Application</button>
+                    <button onClick={submitAlert}>Submit Your Application</button>
                 </section>
                 
             </>}
