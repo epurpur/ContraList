@@ -31,6 +31,9 @@ export const ADD_JOB = gql`
       jobText
       jobAuthor
       createdAt
+      location
+      duration
+      otherComments
       comments {
         _id
         commentText

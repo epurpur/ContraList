@@ -1,5 +1,10 @@
 import React, {useState} from 'react'
+import { useMutation } from '@apollo/client';
 
+// mutations
+import { ADD_JOB } from '../../utils/mutations';
+
+// css styles
 import './styles.css';
 
 const NewJob = () => {
@@ -14,6 +19,9 @@ const NewJob = () => {
         otherComments: '', 
     });
 
+    // invoke useMutation hook to allow adding new user
+    const [ addJob, {error, data} ] = useMutation(ADD_JOB);
+
     //update state based on form input changes
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -23,10 +31,37 @@ const NewJob = () => {
             ...jobInfo,
             [name]: value,
         });
-        console.log(jobInfo)
     };
 
-    //NEED TO GET INFO ABOUT CONTRACTOR AND PASS INTO NEW JOB CARD
+
+    //submit user input to create new job in DB, then redirect back to LandingPage
+    const handleFormSubmit = async(event) => {
+        event.preventDefault();
+
+        //logs current value of jobInfo
+        console.log('job Info upon submission::', jobInfo);
+
+        try{
+            //takes data and executes addJob mutation
+            const { data } = await addJob({
+                variables: {...jobInfo}
+            });
+
+        } catch (e) {
+            console.error(e)
+        }
+
+        //clearFormValues
+        setJobInfo({
+            jobText: '', 
+            jobAuthor: userId,
+            location: '',
+            duration: '',
+            otherComments: '',
+        });
+
+    }
+
 
     return (
         <section id="newJob">
@@ -67,7 +102,7 @@ const NewJob = () => {
                     onChange={handleChange}
                     type="text"    
                 />
-                <button type="submit" form="nameform" value="Submit">Submit</button>
+                <button onClick={handleFormSubmit}>Submit</button>
             </form>
         </section>
     )
