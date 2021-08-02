@@ -6,7 +6,7 @@ const ActiveJobsCard = ({ id, createdAt, jobText, jobAuthor }) => {
     {/* Link to= WILL LINK TO SINGLE JOB PAGE (ex: /SingleJobPage/:id */}
     return (
             <Link to={{pathname: `/SingleJobPage/${id}`, 
-                        state: { createdAt:createdAt, jobText:jobText, jobAuthor:jobAuthor}}} 
+                        state: { id:id, createdAt:createdAt, jobText:jobText, jobAuthor:jobAuthor}}} 
                         className='jobCard' 
                         style={{ textDecoration: 'none' }}>
                 <p> {jobText} </p>

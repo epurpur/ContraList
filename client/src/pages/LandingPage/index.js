@@ -36,7 +36,7 @@ const LandingPage = ()  => {
      * Then filters out those jobs which the current user has commented (applied) for
      * returns job cards for just those jobs which the user has applied for
      */
-
+        console.log('ALLJOBSDATA', allJobsData.jobs)
         // gets id of currently logged in user
         const userId = localStorage.getItem('userId');
 

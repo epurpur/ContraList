@@ -5,10 +5,15 @@ const SingleJobCard = () => {
 
     // data passed in as state from ActiveJobsCard
     let data = useLocation();
+    console.log(data.state);
 
     return (
         <>
             <div id='singleJobCard'>
+                <div className='singleJobInfo'>
+                    <p>Job ID:</p>
+                    <p> {data.state.id} </p>
+                </div>
                 <div className='singleJobInfo'>
                     <p>Job Description:</p>
                     <p> {data.state.jobText} </p>
