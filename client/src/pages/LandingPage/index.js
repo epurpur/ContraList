@@ -104,7 +104,6 @@ const LandingPage = ()  => {
 
     }
 
-
     return (
         <div>
             {/* Evaluate userRole if it is set to contractor or worker */}
@@ -112,11 +111,11 @@ const LandingPage = ()  => {
             
             <section id='contractorJobs'>
                 <h1 id='contractorTitle'>Your Active Jobs</h1>
-                <p id='headerSubtitle'>(click job card to view more information)</p>
-                    {/* Eventually this will make DB call and get active jobs related to specific contractor */}
-                    {/* Will then map over each job and render card here */}
-                    <ActiveJobsCard userRole={userRole} />
                 <Link id='newJobButton' className='links' to='/NewJob' style={{ textDecoration: 'none' }}> Create New Job </Link>
+                <p id='headerSubtitle'>(click job card to view more information)</p>
+                    {/* make DB call to get jobAuthorData and get active jobs related to specific contractor */}
+                    {/* Will then map over each job and render card here */}
+                    {jobAuthorData && makeContractorJobCards()}
             </section>
             
             // else if userRole != 'contractor', userRole will be 'worker'
