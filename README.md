@@ -44,7 +44,7 @@ _AS A_ Worker I Should be able to view all the jobs I applied for and all  the j
 ![screenshot](client/public/5.jpg)
 ![screenshot](client/public/7.jpg)
 ![screenshot](client/public/8.jpg)
-![screenshot](client/public/9.jpg)
+
 
 ---
 
