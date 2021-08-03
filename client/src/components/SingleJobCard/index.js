@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { UserContext } from '../../utils/UserContext';
 import { ADD_COMMENT } from '../../utils/mutations';
 import { QUERY_USERS } from '../../utils/queries';
+import WorkerCard from '../WorkerCard';
 
 const SingleJobCard = () => {
 
@@ -73,7 +74,7 @@ const SingleJobCard = () => {
         applicantIDs.includes(user._id) && applicantData.push(user));
 
     //3. Render card for each applicant
-
+    console.log('APPLICANT DATA', applicantData)
         //ApplicantData looks like this:
         // description: "I am an experienced plumber"
         // email: "msmith@email.com"
@@ -81,13 +82,21 @@ const SingleJobCard = () => {
         // username: "msmith"
         // __typename: "User"
         // _id: "61028b19333e16fc7dad50df"
-    console.log('# APPLICANTS', applicantData.length)
 
     const makeWorkerCard = () => {
     // returns applicant card for all applicants for job. If no applicants, just returns 'No Applicants Found'
 
     if( applicantData.length > 0) {
-        return <h1> You have applicants! </h1>
+        return applicantData.map((applicant) => 
+        (
+            <WorkerCard 
+                key={applicant._id}
+                username={applicant.username}
+                email={applicant.email}
+                phoneNumber={applicant.phoneNumber}
+                description={applicant.description}
+            />
+        ))
     } else {
         return <h1>No one has applied yet!</h1>
     }
