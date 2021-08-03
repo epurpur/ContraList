@@ -4,7 +4,8 @@ import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import { UserContext } from '../../utils/UserContext';
 import { ADD_COMMENT } from '../../utils/mutations';
-import { QUERY_USERBYID } from '../../utils/queries';
+import { QUERY_USERS } from '../../utils/queries';
+import WorkerCard from '../WorkerCard';
 
 const SingleJobCard = () => {
 
@@ -53,7 +54,7 @@ const SingleJobCard = () => {
     // A way to do this would be to get the user IDs from the comments.  Get all user IDs. For those that match, return the info about users that match
     
     //1. get list of user IDs from comments
-    const applicantIDs = []
+    const applicantIDs = [];
 
     if (data.state.comments && data.state.comments.length > 0) {
         data.state.comments.map((comment) => {
@@ -62,9 +63,46 @@ const SingleJobCard = () => {
     }
     // result looks like this: ["61028b52653588fce83df4ef", "61028b19333e16fc7dad50df"]
 
-    //2. for each each applicant, take userId and make DB query for data about that user by ID number
-    const { loading, data:userData } = useQuery(QUERY_USERBYID, {variables: {_id: "61028b52653588fce83df4ef"}});
-    userData && console.log('DATA FROM USERBYID QUERY', userData)
+    //2. get user data about all users in DB
+    const { loading, data:allUsersData } = useQuery(QUERY_USERS);
+    
+    //applicantData holds object for each user that has applied
+    const applicantData = [];
+
+    //for all users in DB, check if user ID is in applicantIDs
+    allUsersData && allUsersData.users.map((user) => 
+        applicantIDs.includes(user._id) && applicantData.push(user));
+
+    //3. Render card for each applicant
+    console.log('APPLICANT DATA', applicantData)
+        //ApplicantData looks like this:
+        // description: "I am an experienced plumber"
+        // email: "msmith@email.com"
+        // phoneNumber: "555-555-5556"
+        // username: "msmith"
+        // __typename: "User"
+        // _id: "61028b19333e16fc7dad50df"
+
+    const makeWorkerCard = () => {
+    // returns applicant card for all applicants for job. If no applicants, just returns 'No Applicants Found'
+
+    if( applicantData.length > 0) {
+        return applicantData.map((applicant) => 
+        (
+            <WorkerCard 
+                key={applicant._id}
+                username={applicant.username}
+                email={applicant.email}
+                phoneNumber={applicant.phoneNumber}
+                description={applicant.description}
+            />
+        ))
+    } else {
+        return <h1>No one has applied yet!</h1>
+    }
+
+    }
+
 
     return (
         <>
@@ -93,7 +131,7 @@ const SingleJobCard = () => {
             {userRole === '1' && 
             <>
                 <h1>Applicants</h1>
-                <p>No one has applied yet!</p>
+                {makeWorkerCard()}
             </>
             }
         </>
