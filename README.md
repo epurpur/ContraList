@@ -104,7 +104,7 @@ Below is contact information for the authors of this application. Please feel fr
 
 | Name           | Email                    | Portfolio                                                                  | Github                                        |
 | -------------- | ------------------------ | -------------------------------------------------------------------------- | --------------------------------------------|
-| Shaima Jobran  | shaimajobran22@gmail.com |[Shaima](https://shaimajobran.github.io/shaima-portfolio/)                                |  [shaimaJobran](https://github.com/shaimajobran)       |
+| Shaima Jobran  | shaimajobran22@gmail.com |[Shaima Jobran](https://shaimajobran.github.io/shaima-portfolio/)                                |  [shaimaJobran](https://github.com/shaimajobran)       |
 | Erich Purpur     | epurpur@gmail.com     | [Erich Purpur](https://ep-react-portfolio.herokuapp.com/)                              | [erichpurpur](https://github.com/epurpur)   |
 
 ---
