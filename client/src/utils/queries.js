@@ -62,6 +62,9 @@ export const QUERY_JOBAUTHOR = gql`
     location
     duration
     otherComments
+    comments {
+      commentAuthor
+    }
   }
 }
 `;

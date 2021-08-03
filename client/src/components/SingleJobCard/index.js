@@ -46,8 +46,11 @@ const SingleJobCard = () => {
         }
     });
 
-    console.log('ALREADY APPLIED??? ', alreadyApplied);
 
+    // if there are applicants and the user logged in is a contractor, render list of cards for each individual user
+    // A way to do this would be to get the user IDs from the comments.  Get all user IDs. For those that match, return the info about users that match
+    
+    //1. get list of user IDs from comments
 
 
 
@@ -74,10 +77,14 @@ const SingleJobCard = () => {
                 </div>
                 {/* Render 'apply for job' button conditionally if user is a worker */}
                 {userRole === '2' && alreadyApplied === 'no' && <Link to='/LandingPage' onClick={makeComment}><button id='applyBtn'>Apply for Job</button></Link>}
+                {alreadyApplied === 'yes' && <h1> You have already applied for this job! </h1>}
             </div>
             {/* if user is a contractor, render the applicants in a list underneath the card */}
             {userRole === '1' && 
-            <h1>Applicants</h1>
+            <>
+                <h1>Applicants</h1>
+                <p>No one has applied yet!</p>
+            </>
             }
         </>
     )
