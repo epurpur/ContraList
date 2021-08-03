@@ -19,15 +19,14 @@
 
 ## **Description**
 
-Many Generla Contractors have a hard time finding workers to work for them on their projects and many workers have a hard time finding jobs that fits their skills.ContaList provides a unique apporyunity for rhem to connect.
+Many General Contractors have a hard time finding workers to work for them on their projects and many skilled workers have a hard time finding jobs that fits their skills.ContaList provides a unique apporyunity for them to connect.
 
 ---
 ## **User Story**
 
-_AS A_ General Contractor <br />
-_I WANT_ to be able to post a job that needs to find the right person to complete it <br />
-_AS A_ Worker I want to be able to find the right job for my skills and apply for it 
-
+_AS A_ Contractor I should be able to register ,login , post a job and see who applied.<br />
+_AS A_ Worker I should be able to register ,login ,find a job,and apply for the job. <br />
+_AS A_ Worker I Should be able to view all the jobs I applied for and all  the jobs available .<br />
 
 ---
 ## DEPLOYED LINKS
