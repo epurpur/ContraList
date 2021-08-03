@@ -40,8 +40,10 @@ _AS A_ Worker I Should be able to view all the jobs I applied for and all  the j
 ![screenshot](client/public/2.jpg)
 ![screenshot](client/public/3.jpg)
 ![screenshot](client/public/4.jpg)
-![screenshot](client/public/5.jpg)
 ![screenshot](client/public/6.jpg)
+![screenshot](client/public/5.jpg)
+![screenshot](client/public/7.jpg)
+![screenshot](client/public/8.jpg)
 
 
 ---
@@ -67,10 +69,6 @@ _AS A_ Worker I Should be able to view all the jobs I applied for and all  the j
 - **R**eact.js
 - **N**ode.js
 
-
-## Additional Technologies
-- Error handling middleware
-- Auth & protected route middleware
 
 ## **Installation**
 
@@ -106,7 +104,7 @@ Below is contact information for the authors of this application. Please feel fr
 
 | Name           | Email                    | Portfolio                                                                  | Github                                        |
 | -------------- | ------------------------ | -------------------------------------------------------------------------- | --------------------------------------------|
-| Shaima Jobran  | shaimajobran22@gmail.com |[Shaima](https://shaimajobran.github.io/shaima-portfolio/)                                |  [shaimaJobran](https://github.com/shaimajobran)       |
+| Shaima Jobran  | shaimajobran22@gmail.com |[Shaima Jobran](https://shaimajobran.github.io/shaima-portfolio/)                                |  [shaimaJobran](https://github.com/shaimajobran)       |
 | Erich Purpur     | epurpur@gmail.com     | [Erich Purpur](https://ep-react-portfolio.herokuapp.com/)                              | [erichpurpur](https://github.com/epurpur)   |
 
 ---
