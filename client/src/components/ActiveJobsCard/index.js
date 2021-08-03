@@ -15,7 +15,7 @@ const ActiveJobsCard = ({ id, createdAt, jobText, jobAuthor, location, duration,
                                     location:location, 
                                     duration:duration, 
                                     otherComments:otherComments,
-                                    comments:comments}}} //comments are an array, passing in just first item in array
+                                    comments:comments}}} //comments are an array
                         className='jobCard' 
                         style={{ textDecoration: 'none' }}>
                 <p> {jobText} </p>
