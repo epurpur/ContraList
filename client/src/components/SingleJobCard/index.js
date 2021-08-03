@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {Link, useLocation} from "react-router-dom";
 import { useMutation } from '@apollo/client';
 import { UserContext } from '../../utils/UserContext';
@@ -11,7 +11,7 @@ const SingleJobCard = () => {
 
     // data passed in as state from ActiveJobsCard
     let data = useLocation();
-    console.log('DATA AVAILABLE', data.state)
+    console.log('DATA AVAILABLE IN SINGLE CARD', data.state)
 
     //gets ID of current user
     const userId = localStorage.getItem('userId');
@@ -36,27 +36,21 @@ const SingleJobCard = () => {
         alert('Your application has been submitted!');
     }
 
+    // make state of alreadyApplied to evaluate whether user has applied for this job yet or not
+    // use useEffect hook on render to check wither if user has applied. Default state is 'no' but sets to 'yes' if conditions are true
+    const [ alreadyApplied, setAlreadyApplied ] = useState('no');
 
-
-    // set state to determine if user has already applied for a job or not. This will be used to render 'apply for job' button for worker
-    const [ alreadyApplied, setAlreadyApplied ] = useState('yes');
-
-    // setAlreadyApplied('wtf is happening')
-
-    // logic to determine if user has already applied for job
-    const checkAlreadyApplied = (userId) => {
-        // comment author may not exist if no one has applied for that job. If not, commentAuthor is set to 'no comment'
-        // data.state.comments[0]
-
-        if (data.state.comments[0].commentAuthor === userId) {
+    useEffect(() => {
+        if (data.state.comments && data.state.comments.length > 0 && data.state.comments[0].commentAuthor == userId) {
             setAlreadyApplied('yes')
-        } 
-        
-        console.log('ALREADY APPLIED???', alreadyApplied);
+        }
+    });
 
-    }
+    console.log('ALREADY APPLIED??? ', alreadyApplied);
 
-    checkAlreadyApplied(userId);
+
+
+
 
 
     return (
@@ -79,8 +73,12 @@ const SingleJobCard = () => {
                     <p>{data.state.otherComments}</p>
                 </div>
                 {/* Render 'apply for job' button conditionally if user is a worker */}
-                {userRole === '2' && <Link to='/LandingPage' onClick={makeComment}><button id='applyBtn'>Apply for Job</button></Link>}
+                {userRole === '2' && alreadyApplied === 'no' && <Link to='/LandingPage' onClick={makeComment}><button id='applyBtn'>Apply for Job</button></Link>}
             </div>
+            {/* if user is a contractor, render the applicants in a list underneath the card */}
+            {userRole === '1' && 
+            <h1>Applicants</h1>
+            }
         </>
     )
 }
