@@ -26,7 +26,7 @@ Many General Contractors have a hard time finding workers to work for them on th
 
 _AS A_ Contractor I should be able to register ,login , post a job and see who applied.<br />
 _AS A_ Worker I should be able to register ,login ,find a job,and apply for the job. <br />
-_AS A_ Worker Should be able to view all the jobs I applied for and all  the jobs available .<br />
+_AS A_ Worker I Should be able to view all the jobs I applied for and all  the jobs available .<br />
 
 ---
 ## DEPLOYED LINKS
