@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import { UserContext } from "../../utils/UserContext";
-import { ADD_COMMENT } from "../../utils/mutations";
+import { ADD_COMMENT, REMOVE_JOB } from "../../utils/mutations";
 import { QUERY_USERS } from "../../utils/queries";
 import WorkerCard from "../WorkerCard";
 
@@ -56,7 +56,7 @@ const SingleJobCard = () => {
   });
 
 
-  
+
   // if there are applicants and the user logged in is a contractor, render list of cards for each individual user
 
   //1. get list of user IDs from comments
@@ -102,8 +102,24 @@ const SingleJobCard = () => {
     }
   };
 
+
+  //Delete Job button. executes REMOVE_JOB mutation
+  const [removeJob, { removeJobError, data: removeJobData }] = useMutation(REMOVE_JOB, {variables: {jobId: data.state.id}});
+
+  const deleteJob = () => {
+      removeJob();
+      alert('Job Deleted!')
+  }
+
   return (
     <>
+      {/* Render Delete Job button if user is contractor */}
+      {userRole === '1' && 
+        <Link to='/LandingPage' onClick={deleteJob}>
+          <button id="deleteBtn">Delete Job</button>
+        </Link>
+      }
+      
       <div id="singleJobCard">
         <div className="singleJobInfo">
           <p>Job Description:</p>
