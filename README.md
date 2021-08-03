@@ -71,8 +71,7 @@ _AS A_ Worker I Should be able to view all the jobs I applied for and all  the j
 
 
 ## Additional Technologies
-- Error handling middleware
-- Auth & protected route middleware
+
 
 ## **Installation**
 
