@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const ActiveJobsCard = ({ id, createdAt, jobText, jobAuthor, location, duration, otherComments }) => {
+const ActiveJobsCard = ({ id, createdAt, jobText, jobAuthor, location, duration, otherComments, comments }) => {
+
+    console.log('ACTIVE CARD DATA ::::', id, comments[0])
 
     {/* Link to= WILL LINK TO SINGLE JOB PAGE (ex: /SingleJobPage/:id */}
     return (
@@ -12,7 +14,8 @@ const ActiveJobsCard = ({ id, createdAt, jobText, jobAuthor, location, duration,
                                     jobAuthor:jobAuthor, 
                                     location:location, 
                                     duration:duration, 
-                                    otherComments:otherComments}}} 
+                                    otherComments:otherComments,
+                                    comments:comments}}} //comments are an array, passing in just first item in array
                         className='jobCard' 
                         style={{ textDecoration: 'none' }}>
                 <p> {jobText} </p>

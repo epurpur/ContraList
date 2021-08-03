@@ -41,7 +41,7 @@ const NewJob = () => {
         //logs current value of jobInfo
         console.log('job Info upon submission::', jobInfo);
 
-        try{
+        try {
             //takes data and executes addJob mutation
             const { data } = await addJob({
                 variables: {...jobInfo}

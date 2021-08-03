@@ -44,7 +44,14 @@ const SingleJobCard = () => {
     const [ alreadyApplied, setAlreadyApplied ] = useState('no');
 
     // logic to determine if user has already applied for job
-    
+    const checkAlreadyApplied = () => {
+        // comment author may not exist if no one has applied for that job. If not, commentAuthor is set to 'no comment'
+        // const commentAuthor = data.state.comments.commentAuthor && data.state.comments.commentAuthor
+        if (typeof data.state.comments.commentAuthor == undefined) {console.log('NO COMMENT AUTHOR')}
+        // console.log('COMMENT AUTHOR', commentAuthor)
+    }
+
+    // checkAlreadyApplied();
 
     return (
         <>

@@ -27,6 +27,7 @@ const LandingPage = ()  => {
     const makeContractorJobCards = () => {
     // this gets all job data for currently logged in contractor. Makes HTML for each item in jobAuthorData
 
+
         return jobAuthorData.jobAuthor.map((job) => 
         (
             <ActiveJobsCard 
@@ -37,6 +38,7 @@ const LandingPage = ()  => {
                 location={job.location}
                 duration={job.duration}
                 otherComments={job.otherComments}
+                comments={job.comments}
             />
         ))
     }
@@ -44,6 +46,7 @@ const LandingPage = ()  => {
 
     const makeActiveJobCards = () => {
         // this gets all jobs data from 'allJobsData' prop. Makes HTML for each item in allJobsData
+
 
         return  allJobsData.jobs.map((job) =>
         (
@@ -55,6 +58,7 @@ const LandingPage = ()  => {
                 location={job.location}
                 duration={job.duration}
                 otherComments={job.otherComments}
+                comments={job.comments}
             /> 
         ))
     };
@@ -65,7 +69,7 @@ const LandingPage = ()  => {
      * Then filters out those jobs which the current user has commented (applied) for
      * returns job cards for just those jobs which the user has applied for
      */
-        console.log('ALLJOBSDATA', allJobsData.jobs)
+
         // gets id of currently logged in user
         const userId = localStorage.getItem('userId');
 
@@ -88,7 +92,7 @@ const LandingPage = ()  => {
             return a;
         }, []);
     
-        console.log('UNIQUE',uniqueJobs);
+        // console.log('UNIQUE',uniqueJobs);
 
         return uniqueJobs.map((job) => (
                 <ActiveJobsCard 
@@ -99,6 +103,7 @@ const LandingPage = ()  => {
                     location={job.location}
                     duration={job.duration}
                     otherComments={job.otherComments}
+                    comments={job.comments}
                 /> 
         ))
 
