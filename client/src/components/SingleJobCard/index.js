@@ -72,11 +72,27 @@ const SingleJobCard = () => {
     allUsersData && allUsersData.users.map((user) => 
         applicantIDs.includes(user._id) && applicantData.push(user));
 
-    console.log('APPLICANTS', applicantData);
+    //3. Render card for each applicant
 
+        //ApplicantData looks like this:
+        // description: "I am an experienced plumber"
+        // email: "msmith@email.com"
+        // phoneNumber: "555-555-5556"
+        // username: "msmith"
+        // __typename: "User"
+        // _id: "61028b19333e16fc7dad50df"
+    console.log('# APPLICANTS', applicantData.length)
 
-    // const { loading, data:userData } = useQuery(QUERY_USERBYID, {variables: {_id: "61028b52653588fce83df4ef"}});
-    // userData && console.log('DATA FROM USERBYID QUERY', userData.userById)
+    const makeWorkerCard = () => {
+    // returns applicant card for all applicants for job. If no applicants, just returns 'No Applicants Found'
+
+    if( applicantData.length > 0) {
+        return <h1> You have applicants! </h1>
+    } else {
+        return <h1>No one has applied yet!</h1>
+    }
+
+    }
 
 
     return (
@@ -106,7 +122,7 @@ const SingleJobCard = () => {
             {userRole === '1' && 
             <>
                 <h1>Applicants</h1>
-                <p>No one has applied yet!</p>
+                {makeWorkerCard()}
             </>
             }
         </>
