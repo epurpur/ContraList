@@ -1,8 +1,10 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {Link, useLocation} from "react-router-dom";
 import { useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { UserContext } from '../../utils/UserContext';
 import { ADD_COMMENT } from '../../utils/mutations';
+import { QUERY_USERBYID } from '../../utils/queries';
 
 const SingleJobCard = () => {
 
@@ -58,9 +60,11 @@ const SingleJobCard = () => {
             applicantIDs.push(comment.commentAuthor)
         })
     }
-    console.log('APPLICANTS', applicantIDs);
+    // result looks like this: ["61028b52653588fce83df4ef", "61028b19333e16fc7dad50df"]
 
-
+    //2. for each each applicant, take userId and make DB query for data about that user by ID number
+    const { loading, data:userData } = useQuery(QUERY_USERBYID, {variables: {_id: "61028b52653588fce83df4ef"}});
+    userData && console.log('DATA FROM USERBYID QUERY', userData)
 
     return (
         <>
