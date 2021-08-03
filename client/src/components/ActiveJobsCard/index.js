@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 
 const ActiveJobsCard = ({ id, createdAt, jobText, jobAuthor, location, duration, otherComments, comments }) => {
 
-    console.log('ACTIVE CARD DATA ::::', id, comments[0])
+    console.log('ACTIVE CARD DATA ::::', id, comments)
 
     {/* Link to= WILL LINK TO SINGLE JOB PAGE (ex: /SingleJobPage/:id */}
     return (

@@ -1,8 +1,10 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {Link, useLocation} from "react-router-dom";
 import { useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { UserContext } from '../../utils/UserContext';
 import { ADD_COMMENT } from '../../utils/mutations';
+import { QUERY_USERBYID } from '../../utils/queries';
 
 const SingleJobCard = () => {
 
@@ -11,7 +13,7 @@ const SingleJobCard = () => {
 
     // data passed in as state from ActiveJobsCard
     let data = useLocation();
-    console.log('DATA AVAILABLE', data.state)
+    console.log('DATA AVAILABLE IN SINGLE CARD', data.state)
 
     //gets ID of current user
     const userId = localStorage.getItem('userId');
@@ -36,28 +38,33 @@ const SingleJobCard = () => {
         alert('Your application has been submitted!');
     }
 
+    // make state of alreadyApplied to evaluate whether user has applied for this job yet or not
+    // use useEffect hook on render to check wither if user has applied. Default state is 'no' but sets to 'yes' if conditions are true
+    const [ alreadyApplied, setAlreadyApplied ] = useState('no');
 
-
-    // set state to determine if user has already applied for a job or not. This will be used to render 'apply for job' button for worker
-    const [ alreadyApplied, setAlreadyApplied ] = useState('yes');
-
-    // setAlreadyApplied('wtf is happening')
-
-    // logic to determine if user has already applied for job
-    const checkAlreadyApplied = (userId) => {
-        // comment author may not exist if no one has applied for that job. If not, commentAuthor is set to 'no comment'
-        // data.state.comments[0]
-
-        if (data.state.comments[0].commentAuthor === userId) {
+    useEffect(() => {
+        if (data.state.comments && data.state.comments.length > 0 && data.state.comments[0].commentAuthor == userId) {
             setAlreadyApplied('yes')
-        } 
-        
-        console.log('ALREADY APPLIED???', alreadyApplied);
+        }
+    });
 
+
+    // if there are applicants and the user logged in is a contractor, render list of cards for each individual user
+    // A way to do this would be to get the user IDs from the comments.  Get all user IDs. For those that match, return the info about users that match
+    
+    //1. get list of user IDs from comments
+    const applicantIDs = []
+
+    if (data.state.comments && data.state.comments.length > 0) {
+        data.state.comments.map((comment) => {
+            applicantIDs.push(comment.commentAuthor)
+        })
     }
+    // result looks like this: ["61028b52653588fce83df4ef", "61028b19333e16fc7dad50df"]
 
-    checkAlreadyApplied(userId);
-
+    //2. for each each applicant, take userId and make DB query for data about that user by ID number
+    const { loading, data:userData } = useQuery(QUERY_USERBYID, {variables: {_id: "61028b52653588fce83df4ef"}});
+    userData && console.log('DATA FROM USERBYID QUERY', userData)
 
     return (
         <>
@@ -79,8 +86,16 @@ const SingleJobCard = () => {
                     <p>{data.state.otherComments}</p>
                 </div>
                 {/* Render 'apply for job' button conditionally if user is a worker */}
-                {userRole === '2' && <Link to='/LandingPage' onClick={makeComment}><button id='applyBtn'>Apply for Job</button></Link>}
+                {userRole === '2' && alreadyApplied === 'no' && <Link to='/LandingPage' onClick={makeComment}><button id='applyBtn'>Apply for Job</button></Link>}
+                {alreadyApplied === 'yes' && <h1> You have already applied for this job! </h1>}
             </div>
+            {/* if user is a contractor, render the applicants in a list underneath the card */}
+            {userRole === '1' && 
+            <>
+                <h1>Applicants</h1>
+                <p>No one has applied yet!</p>
+            </>
+            }
         </>
     )
 }

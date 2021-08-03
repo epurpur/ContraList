@@ -10,6 +10,9 @@ const resolvers = {
           user: async (parent, { username }) => {
             return User.findOne({ username }).populate('jobs');
           },
+          userById: async (parent, { _id }) => {
+            return User.findOne({ _id });
+          },
           jobs: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Job.find(params).sort({ createdAt: -1 });

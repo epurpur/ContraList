@@ -20,6 +20,17 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_USERBYID = gql`
+  query userById($_id: ID!) {
+    userById(_id: $_id) {
+			username
+      phoneNumber
+      email
+      description
+    }
+  }
+`;
+
 export const QUERY_JOBS = gql`
   query getJobs {
     jobs {
@@ -62,6 +73,9 @@ export const QUERY_JOBAUTHOR = gql`
     location
     duration
     otherComments
+    comments {
+      commentAuthor
+    }
   }
 }
 `;
