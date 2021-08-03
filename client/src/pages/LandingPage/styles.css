@@ -33,9 +33,9 @@
     font-size: 30px;
 }
 
-/**********************/
-/* Job Card component */
-/**********************/
+/*****************************/
+/* Active Job Card component */
+/*****************************/
 .jobContainer{
     display: flex;
     flex-direction: row;
@@ -62,3 +62,5 @@
     font-size: 30px;
     margin: 10px;
 }
+
+

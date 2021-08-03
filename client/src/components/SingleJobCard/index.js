@@ -75,13 +75,6 @@ const SingleJobCard = () => {
 
     //3. Render card for each applicant
     console.log('APPLICANT DATA', applicantData)
-        //ApplicantData looks like this:
-        // description: "I am an experienced plumber"
-        // email: "msmith@email.com"
-        // phoneNumber: "555-555-5556"
-        // username: "msmith"
-        // __typename: "User"
-        // _id: "61028b19333e16fc7dad50df"
 
     const makeWorkerCard = () => {
     // returns applicant card for all applicants for job. If no applicants, just returns 'No Applicants Found'
@@ -131,6 +124,7 @@ const SingleJobCard = () => {
             {userRole === '1' && 
             <>
                 <h1>Applicants</h1>
+                <p>(It is the responsibility of the contractor to contact applicants)</p>
                 {makeWorkerCard()}
             </>
             }
