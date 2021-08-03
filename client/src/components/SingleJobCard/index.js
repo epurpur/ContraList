@@ -51,8 +51,14 @@ const SingleJobCard = () => {
     // A way to do this would be to get the user IDs from the comments.  Get all user IDs. For those that match, return the info about users that match
     
     //1. get list of user IDs from comments
+    const applicantIDs = []
 
-
+    if (data.state.comments && data.state.comments.length > 0) {
+        data.state.comments.map((comment) => {
+            applicantIDs.push(comment.commentAuthor)
+        })
+    }
+    console.log('APPLICANTS', applicantIDs);
 
 
 

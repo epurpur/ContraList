@@ -20,6 +20,18 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_ALLUSERS = gql`
+  query users {
+    users{
+      _id
+      username
+      email
+      phoneNumber
+      description
+    }
+}
+`;
+
 export const QUERY_JOBS = gql`
   query getJobs {
     jobs {
