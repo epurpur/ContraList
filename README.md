@@ -19,7 +19,7 @@
 
 ## **Description**
 
-Many Generla Contractors have a hard time finding workers to work for them on their projects and many workers have a hard time finding jobs that fits their skills.ContaList provides a unique apporyunity for rhem to connect.
+Many General Contractors have a hard time finding workers to work for them on their projects and many workers have a hard time finding jobs that fits their skills.ContaList provides a unique apporyunity for rhem to connect.
 
 ---
 ## **User Story**
