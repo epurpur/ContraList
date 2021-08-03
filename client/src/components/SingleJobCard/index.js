@@ -56,7 +56,7 @@ const SingleJobCard = () => {
   });
 
 
-  
+
   // if there are applicants and the user logged in is a contractor, render list of cards for each individual user
 
   //1. get list of user IDs from comments
@@ -104,6 +104,7 @@ const SingleJobCard = () => {
 
   return (
     <>
+      <button id="deleteBtn">Delete Job</button>
       <div id="singleJobCard">
         <div className="singleJobInfo">
           <p>Job Description:</p>
