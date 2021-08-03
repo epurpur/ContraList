@@ -2,10 +2,10 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
+import { UserContext } from '../../utils/UserContext';
 
 // Queries and Mutations
 import { LOGIN_USER } from '../../utils/mutations';
-import { UserContext } from '../../utils/UserContext';
 
 
 const LoginForm = () => {

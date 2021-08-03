@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 // mutations
@@ -35,13 +36,12 @@ const NewJob = () => {
 
 
     //submit user input to create new job in DB, then redirect back to LandingPage
-    const handleFormSubmit = async(event) => {
-        event.preventDefault();
+    const handleFormSubmit = async (event) => {
 
         //logs current value of jobInfo
         console.log('job Info upon submission::', jobInfo);
 
-        try{
+        try {
             //takes data and executes addJob mutation
             const { data } = await addJob({
                 variables: {...jobInfo}
@@ -59,6 +59,8 @@ const NewJob = () => {
             duration: '',
             otherComments: '',
         });
+
+        alert('New Job created!');
 
     }
 
@@ -102,7 +104,9 @@ const NewJob = () => {
                     onChange={handleChange}
                     type="text"    
                 />
-                <button onClick={handleFormSubmit}>Submit</button>
+                <Link to='/LandingPage' onClick={handleFormSubmit}>
+                    <button>Submit</button>
+                </Link>
             </form>
         </section>
     )
