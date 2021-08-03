@@ -109,6 +109,6 @@ Below is contact information for the authors of this application. Please feel fr
 
 ---
 
-### Thank you for using ConraList!
+### Thank you for using ContraList!
 ---
 © 2021 
