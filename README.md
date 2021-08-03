@@ -70,9 +70,6 @@ _AS A_ Worker I Should be able to view all the jobs I applied for and all  the j
 - **N**ode.js
 
 
-## Additional Technologies
-
-
 ## **Installation**
 
 1. Clone the repo: `git clone https://github.com/epurpur/ContraList.git `
