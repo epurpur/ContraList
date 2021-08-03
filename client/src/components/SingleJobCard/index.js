@@ -113,9 +113,13 @@ const SingleJobCard = () => {
 
   return (
     <>
-      <Link to='/LandingPage' onClick={deleteJob}>
+      {/* Render Delete Job button if user is contractor */}
+      {userRole === '1' && 
+        <Link to='/LandingPage' onClick={deleteJob}>
           <button id="deleteBtn">Delete Job</button>
-    </Link>
+        </Link>
+      }
+      
       <div id="singleJobCard">
         <div className="singleJobInfo">
           <p>Job Description:</p>

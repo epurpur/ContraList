@@ -26,9 +26,12 @@ const LandingPage = ()  => {
 
     const makeContractorJobCards = () => {
     // this gets all job data for currently logged in contractor. Makes HTML for each item in jobAuthorData
+        console.log('***', jobAuthorData.jobAuthor)
 
-
-        return jobAuthorData.jobAuthor.map((job) => 
+        // if contractor has not created any jobs, return h1 tag, else return ActiveJobsCard for each job
+        return jobAuthorData.jobAuthor.length == 0 ? 
+        <h1>You have not created any jobs!</h1> : 
+        jobAuthorData.jobAuthor.map((job) => 
         (
             <ActiveJobsCard 
                 key={job._id}
