@@ -2,8 +2,11 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
+
+
 // mutations
 import { ADD_JOB } from '../../utils/mutations';
+import { QUERY_JOBAUTHOR } from '../../utils/queries';
 
 // css styles
 import './styles.css';
@@ -20,8 +23,9 @@ const NewJob = () => {
         otherComments: '', 
     });
 
+
     // invoke useMutation hook to allow adding new user
-    const [ addJob, {error, data} ] = useMutation(ADD_JOB);
+    const [ addJob, {error, data} ] = useMutation(ADD_JOB, {refetchQueries:[{query: QUERY_JOBAUTHOR, variables: {jobAuthor: userId}}]});
 
     //update state based on form input changes
     const handleChange = (event) => {

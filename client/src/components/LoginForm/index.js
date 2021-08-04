@@ -31,6 +31,10 @@ const LoginForm = () => {
       // logs current value of formState
       console.log('formState upon submission ::', formState);
       
+      //locally validate credentials before try block
+      //check if email is a valid format
+      //check for empty values
+
       // takes data and executes login mutation
       try {
         const { data } = await login({
@@ -71,6 +75,7 @@ const LoginForm = () => {
                     name="email"
                     value={formState.email}
                     onChange={handleChange}
+                    required
                 />
                 <label>Password:</label>
                 <input 
@@ -78,8 +83,10 @@ const LoginForm = () => {
                     name="password"
                     value={formState.password}
                     onChange={handleChange}
+                    required
                 />
                 <Link to='/LandingPage' onClick={handleFormSubmit}>
+                  {/* use the useHistory hook to redirect to LandingPage if login is successful */}
                   <button>Submit</button>
                 </Link>
             </form>

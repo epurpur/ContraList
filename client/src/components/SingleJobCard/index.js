@@ -6,6 +6,7 @@ import { UserContext } from "../../utils/UserContext";
 import { ADD_COMMENT, REMOVE_JOB } from "../../utils/mutations";
 import { QUERY_USERS } from "../../utils/queries";
 import WorkerCard from "../WorkerCard";
+import { QUERY_JOBAUTHOR } from "../../utils/queries";
 
 const SingleJobCard = () => {
   // use context
@@ -55,8 +56,6 @@ const SingleJobCard = () => {
     }
   });
 
-
-
   // if there are applicants and the user logged in is a contractor, render list of cards for each individual user
 
   //1. get list of user IDs from comments
@@ -102,24 +101,31 @@ const SingleJobCard = () => {
     }
   };
 
-
   //Delete Job button. executes REMOVE_JOB mutation
-  const [removeJob, { removeJobError, data: removeJobData }] = useMutation(REMOVE_JOB, {variables: {jobId: data.state.id}});
+  const [removeJob, { removeJobError, data: removeJobData }] = useMutation(
+    REMOVE_JOB,
+    {
+      variables: { jobId: data.state.id },
+      refetchQueries: [
+        { query: QUERY_JOBAUTHOR, variables: { jobAuthor: userId } },
+      ],
+    }
+  );
 
   const deleteJob = () => {
-      removeJob();
-      alert('Job Deleted!')
-  }
+    removeJob();
+    alert("Job Deleted!");
+  };
 
   return (
     <>
       {/* Render Delete Job button if user is contractor */}
-      {userRole === '1' && 
-        <Link to='/LandingPage' onClick={deleteJob}>
+      {userRole === "1" && (
+        <Link to="/LandingPage" onClick={deleteJob}>
           <button id="deleteBtn">Delete Job</button>
         </Link>
-      }
-      
+      )}
+
       <div id="singleJobCard">
         <div className="singleJobInfo">
           <p>Job Description:</p>
