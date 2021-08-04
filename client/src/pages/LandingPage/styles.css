@@ -42,7 +42,7 @@
     justify-content: center;
 }
 
-.jobCardsHolder {
+.allJobCardsHolder {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -51,6 +51,38 @@
     border: 5px solid var(--text-logo-orange);
     margin: 0 5px 20px 5px;
     border-radius: 10px;
+}
+
+.allJobCardsHolder .jobCard {
+    background-color: var(--background-header);
+    width: 95%;
+    border-radius: 5px;
+    color: var(--background-main);
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.myJobCardsHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 45%;
+    border: 5px solid var(--text-logo-orange);
+    margin: 0 5px 20px 5px;
+    border-radius: 10px;
+}
+
+.myJobCardsHolder .jobCard {
+    background-color: white;
+    width: 95%;
+    border: 3px solid var(--background-header);
+    border-radius: 5px;
+    color: var(--background-header);
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
 }
 
 .jobCard {
@@ -65,3 +97,44 @@
 
 #deleteBtn { margin: 10px;}
 
+
+/*************************************************************/
+
+/*****************/
+/* Media Queries */
+/*****************/
+
+@media screen and (max-width: 750px) {
+    
+    .allJobCardsHolder .jobCard {
+        font-size: 22px;
+    }
+    
+    .myJobCardsHolder .jobCard {
+        font-size: 22px;
+    }
+
+    .jobCard {
+        font-size: 22px;
+    }
+  }
+
+  @media screen and (max-width: 585px) {
+    #headerSubtitle {
+        font-size: 17.5px;
+    }
+    
+    .jobContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .myJobCardsHolder {
+        width: 90%;
+    }
+
+    .allJobCardsHolder {
+        width: 90%;
+    }
+
+  };

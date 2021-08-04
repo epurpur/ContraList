@@ -16,20 +16,8 @@ const Homepage = () => {
       <section id="register">
         <div className="homepageItem">
           {/*Setting user role to 1 (contractor) or 2 (worker) on click */}
-          <Link
-            className="links"
-            to="/ContractorRegistration"
-            style={{ textDecoration: "none" }}
-          >
-            Are you a contractor looking for labor?
-          </Link>
-          <Link
-            className="links"
-            to="/WorkerRegistration"
-            style={{ textDecoration: "none" }}
-          >
-            Are you a skilled laborer looking for work?
-          </Link>
+          <Link className="links" to="/ContractorRegistration" style={{ textDecoration: "none" }}>Are you a contractor looking for labor?</Link>
+          <Link className="links" to="/WorkerRegistration" style={{ textDecoration: "none" }}>Are you a skilled laborer looking for work?</Link>
           <Link to="/About">
             <button id="aboutBtn">Learn More</button>
           </Link>

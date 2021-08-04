@@ -90,7 +90,7 @@ const ContractorRegistrationForm = () => {
 
     return (
         <section className="registrationForm">
-            <h1 className="formTitle">Register as a licensed contractor</h1>
+            <h1 className="formTitle">Register as licensed contractor</h1>
             <form>
                 <label>Username:</label>
                 <input 
