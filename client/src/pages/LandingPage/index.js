@@ -120,7 +120,7 @@ const LandingPage = ()  => {
             <section id='contractorJobs'>
                 <h1 id='contractorTitle'>Your Active Jobs</h1>
                 <Link id='newJobButton' className='links' to='/NewJob' style={{ textDecoration: 'none' }}> Create New Job </Link>
-                <p id='headerSubtitle'>(click job card to view job information and applicants)</p>
+                <p id='headerSubtitle'>(click job card to view job info and applicants)</p>
                     {/* make DB call to get jobAuthorData and get active jobs related to specific contractor */}
                     {/* Will then map over each job and render card here */}
                     {jobAuthorData && makeContractorJobCards()}
@@ -129,16 +129,16 @@ const LandingPage = ()  => {
             // else if userRole != 'contractor', userRole will be 'worker'
             : 
             <section id='contractorJobs'>
-                <h1 id='contractorTitle'>View Jobs (worker)</h1>
+                <h1 id='contractorTitle'>View Jobs</h1>
                 <p id='headerSubtitle'>(click job card to view more information)</p>
                     <div className='jobContainer'>
-                        <div className="jobCardsHolder">
+                        <div className="myJobCardsHolder">
                             <h1>Jobs You Have Applied For</h1>
                             {/* useQuery is asynchronous, so when allJobsData is available, then execute makeMyJobCards */}
                             {allJobsData && makeMyJobCards()}
                         </div>
                         
-                        <div className="jobCardsHolder">
+                        <div className="allJobCardsHolder">
                             <h1>All Active Jobs</h1>
                             {/* useQuery is asynchronous, so when allJobsData is available, then execute makeActiveJobCards */}
                             {allJobsData && makeActiveJobCards()}    

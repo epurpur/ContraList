@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../utils/UserContext";
 import Auth from "../../utils/auth";
+
 /* CSS styles */
 import "./styles.css";
 
@@ -21,32 +22,13 @@ const Header = () => {
       </h1>
       {userRole.roleId === "" ? (
         <section id="navButtons">
-          <Link to="/" className="navButton" style={{ textDecoration: "none" }}>
-            {" "}
-            Home{" "}
-          </Link>
-          <Link
-            to="/Login"
-            className="navButton"
-            style={{ textDecoration: "none" }}
-          >
-            Login
-          </Link>
+          <Link to="/" className="navButton" style={{ textDecoration: "none" }}>Home</Link>
+          <Link to="/Login" className="navButton" style={{ textDecoration: "none" }}>Login</Link>
         </section>
       ) : (
         <section id="navButtons">
-          <Link to="/" className="navButton" style={{ textDecoration: "none" }}>
-            {" "}
-            Home{" "}
-          </Link>
-          <Link
-            to="/Logout"
-            className="navButton"
-            onClick={logoutUser}
-            style={{ textDecoration: "none" }}
-          >
-            Logout
-          </Link>
+          <Link to="/" className="navButton" style={{ textDecoration: "none" }}>Home</Link>
+          <Link to="/Logout" className="navButton" onClick={logoutUser} style={{ textDecoration: "none" }}>Logout</Link>
         </section>
       )}
     </header>

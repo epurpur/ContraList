@@ -87,7 +87,7 @@ const WorkerRegistrationForm = () => {
 
     return (
         <section className="registrationForm">
-            <h1 className="formTitle">Register as a skilled laborer</h1>
+            <h1 className="formTitle">Register as skilled laborer</h1>
             <form>
                 <label>Username:</label>
                 <input 

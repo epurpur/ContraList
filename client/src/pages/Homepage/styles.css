@@ -52,3 +52,19 @@
 .links:hover {
   color: var(--text-logo-orange);
 }
+
+/*************************************************************/
+
+/*****************/
+/* Media Queries */
+/*****************/
+
+@media screen and (max-width: 585px) {
+  #homePageTop h1 {
+    font-size: 55px;
+  }
+  
+  #register {
+    font-size: 37.5px
+  }
+}
