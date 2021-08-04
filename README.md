@@ -30,7 +30,7 @@ _AS A_ Worker I Should be able to view all the jobs I applied for and all  the j
 
 ---
 ## DEPLOYED LINKS
-* [VIEW LIVE APP]()
+* [VIEW LIVE APP](http://contralist.herokuapp.com/)
 * [GITHUB](https://github.com/epurpur/ContraList)
 
 
