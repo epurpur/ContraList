@@ -125,7 +125,7 @@ const SingleJobCard = () => {
           <button id="deleteBtn">Delete Job</button>
         </Link>
       )}
-
+      <Link to="/LandingPage" ><button id='backBtn'>Go Back</button></Link>
       <div id="singleJobCard">
         <div className="singleJobInfo">
           <p>Job Description:</p>
