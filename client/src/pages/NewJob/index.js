@@ -84,7 +84,7 @@ const NewJob = () => {
                 />
                 <label>Job Location:</label>
                 <input
-                    placeholder="Address or Location of job" 
+                    placeholder="Address or Location" 
                     name="location"
                     value={jobInfo.location}
                     onChange={handleChange}

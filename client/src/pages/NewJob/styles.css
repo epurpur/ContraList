@@ -21,7 +21,7 @@
   }
 
 #newJobForm, #newJobForm input, #newJobForm textarea {
-    width: 90%;
+    width: 85%;
 }
 
 #newJobForm textarea {
@@ -31,4 +31,18 @@
 }
 
 
+/*************************************************************/
 
+/*****************/
+/* Media Queries */
+/*****************/
+
+@media screen and (max-width: 585px) {
+  #newJobForm, #newJobForm input, #newJobForm textarea {
+    width: 75%;
+}
+  
+  #newJobForm textarea {
+    font-size: 20px;
+  }
+}
